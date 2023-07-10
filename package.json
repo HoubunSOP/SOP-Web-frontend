@@ -13,6 +13,7 @@
     "@types/node": "^18.16.19",
     "autoprefixer": "^10.4.14",
     "nuxt": "^3.6.2",
+    "nuxt-typed-router": "^3.2.4",
     "postcss": "^8.4.25",
     "tailwindcss": "^3.3.2"
   },
