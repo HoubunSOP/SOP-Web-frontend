@@ -14,8 +14,8 @@ def getIPv6Address():
 
 def dns_records():
     headers = {
-        'X-Auth-Email': 'misaka10843@163.com',
-        'X-Auth-Key': 'f0aac27662574c191eb5de19812bded43684e',
+        'X-Auth-Email': 'xxxxx@163.com',
+        'X-Auth-Key': 'xxxxxx',
         'Content-Type': 'application/json',
     }
 
@@ -23,7 +23,7 @@ def dns_records():
         getIPv6Address()+'","ttl":1,"proxied":false}'
 
     response = requests.put(
-        'https://api.cloudflare.com/client/v4/zones/657b0706cffb6a639704b002e93f2ad9/dns_records/1cfa70bf627475fbf87590e70c34df1b', headers=headers, data=data)
+        'https://api.cloudflare.com/client/v4/zones/xxxxx/dns_records/xxxxx', headers=headers, data=data)
     success = json.loads(response.text).get('success')
     if success:
         print("已经成功替换啦！")
