@@ -5,10 +5,11 @@
   }" :pagination="{
   type: 'progressbar',
 }" :modules="modules" class="TopSwiper">
-    <swiper-slide v-for="index in 10" :key="index">Slide {{ index }}
+    <swiper-slide class="opacity-50 transition-opacity ease-in-out" v-for="index in 10" :key="index">Slide {{ index }}
       <div class="caption-wrap">
         <div class="caption">
-          「摇曳露营△」特设情报页 </div>
+          「摇曳露营△」特设情报页
+        </div>
       </div>
     </swiper-slide>
   </swiper>
@@ -42,7 +43,7 @@ export default {
 </script>
 
 <style>
-.swiper {
+.TopSwiper {
   width: 100%;
   height: 280px;
   border-radius: 8px !important;
@@ -54,7 +55,7 @@ export default {
 
 
 
-.swiper-slide {
+.TopSwiper .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: rgb(158, 158, 158);
@@ -65,11 +66,9 @@ export default {
   justify-content: center;
   align-items: center;
   border-radius: 8px !important;
-  transition: opacity 0.5s ease;
-  opacity: 50%;
 }
 
-.swiper-slide img {
+.TopSwiper .swiper-slide img {
   display: block;
   width: 420px;
   height: 210px;
@@ -127,7 +126,7 @@ export default {
   right: 0;
 }
 
-.swiper-slide-active {
+.TopSwiper .swiper-slide-active {
   opacity: 100%;
 }
 

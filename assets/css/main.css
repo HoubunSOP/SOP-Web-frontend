@@ -3,5 +3,26 @@
 @tailwind utilities;
 
 body {
-  background-color: #f7f7f7
+  background-color: #f7f7f7;
+  font-family: 'Microsoft Yahei UI',Roboto,'Open Sans',Helvetica,'DejaVu Sans',Arial, sans-serif;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+     background: rgba(0,0,0,.1); border-radius: 10px; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+      background: #3E72B6;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+ background: #D7E9F8
 }
