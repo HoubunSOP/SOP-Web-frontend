@@ -1,10 +1,15 @@
 <template>
-  <swiper slidesPerView="auto" :spaceBetween="10" freeMode="true" mousewheel="true" :scrollbar="{
+  <div class="pb-1 pt-5 px-5 my-4">
+    <span class="text-lg text-white -ml-1.5 py-1 px-2.5 bg-[#4453c1] rounded">
+      未来发售的单行本🔭
+    </span>
+  </div>
+  <swiper slidesPerView="auto" :spaceBetween="10" :freeMode="'true'" :mousewheel="'true'" :scrollbar="{
     el: '.swiper-scrollbar',
     draggable: true,
     snapOnRelease: false,
     dragSize: 'auto',
-  }" :modules="modules" class="MangaSwiper">
+  }" :modules="modules" class="MangaSwiper select-none rounded-md">
     <swiper-slide v-for="index in 10" :key="index">
       <div class="SwiperCard hover:opacity-80 transition-opacity ease-in-out">
         <div class="rounded-tl-md absolute w-12 h-5 text-center text-white bg-black/[0.5]">
@@ -23,7 +28,7 @@
       </div>
     </swiper-slide>
   </swiper>
-  <div class="swiper-scrollbar !h-2.5 my-1"></div>
+  <div class="swiper-scrollbar !h-2.5 my-2"></div>
 </template>
 <script>
 // Import Swiper Vue.js components
