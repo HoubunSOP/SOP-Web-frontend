@@ -63,7 +63,7 @@
     </nav>
 
     <!-- Page content -->
-    <div class="flex-grow overflow-y-auto">
+    <div class="flex-grow overflow-y-auto" data-scroll>
       <slot />
     </div>
   </div>

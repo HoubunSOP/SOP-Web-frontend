@@ -3,9 +3,9 @@
     🌟观星资讯✨
   </h3>
   <div class="ContentContainer">
-    <a v-for="index in 10" :key="index"
+    <nuxt-link v-for="index in 10" :key="index"
       class="pt-[26px] pb-[15px] px-6 relative rounded-md flex flex-wrap overflow-hidden transition-all hover:bg-slate-100 hover:scale-[1.02] ease-in-out"
-      href="" target="_blank" rel="noreferrer">
+      :to="'/post/' + index">
       <p class="aText h-[4.5rem] mr-5 text-sm font-medium line-clamp-3">
         「ごらく部」でまったり日常を送る女子中学生4人組が異世界転生！？人気作「ゆるゆり」のスピンオフ作品！
       </p>
@@ -15,17 +15,17 @@
             src="https://media.comicspace.jp/wp-content/uploads/2022/01/775a9b3f8aa99181e60620106c09bd65.jpeg" alt="">
         </div>
       </div>
-      <div class="ListRowBottom absolute bottom-2.5">
-        <span class="aSubText text-sm font-medium tracking-wide text-[#808080]">
+      <div class="absolute bottom-2.5">
+        <span class="text-sm font-medium tracking-wide text-[#808080]">
           <i class="fa-regular fa-folder-open"></i>
           コミスペ！
         </span>
-        <span class="aSubText text-sm font-medium tracking-wide text-[#808080]">
+        <span class="text-sm font-medium tracking-wide text-[#808080]">
           <i class="fa-regular fa-calendar"></i>
           2022.01.11
         </span>
       </div>
-    </a>
+    </nuxt-link>
   </div>
 </template>
 

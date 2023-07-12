@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['nuxt-typed-router'],
-
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     // Private config that is only available on the server

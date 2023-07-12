@@ -1,14 +1,14 @@
 <template>
-  <div class="relative flex flex-col md:flex-row md:justify-between mx-auto w-6/6 lg:w-5/6 xl:w-4/6 gap-10 top-8">
-    <div class="w-full md:w-4/5 bg-white bg-opacity-75 rounded-lg p-4">
+  <mainpage>
+    <maincolumn>
       <IndexTopswiper />
       <IndexMangaswiper />
       <IndexPostlist />
-    </div>
-    <div class="w-full md:w-2/5 bg-white bg-opacity-75 rounded-lg mt-4 md:mt-0 p-4">
+    </maincolumn>
+    <Sidebar>
       <h1>侧边栏</h1>
-    </div>
-  </div>
+    </Sidebar>
+  </mainpage>
 </template>
 
 <script setup>
