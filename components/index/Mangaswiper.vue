@@ -15,11 +15,11 @@
         <div class="rounded-tl-md absolute w-12 h-5 text-center text-white bg-black/[0.5]">
           7/26 </div>
         <div>
-          <a href="https://www.fwgxt.top/KR-comics/Koias-5.kirara">
+          <nuxt-link :to="'/comic/' + index">
             <img alt="" width="1055" height="1500" class="rounded-md max-w-full !h-auto"
               src="https://s2.loli.net/2023/02/05/MCwSJxVNW8zrF12.jpg">
             <img class="rounded-md block my-1.5 mx-auto" src="https://houbunsha.co.jp/img/mv_img/label_4.gif">
-          </a>
+          </nuxt-link>
           <p>
           </p>
           <div class="text-sm text-center">

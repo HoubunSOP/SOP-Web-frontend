@@ -23,27 +23,39 @@
             </p>
             <ul class="m-0 p-0 flex flex-wrap">
               <li class="mt-[10px] mr-[8px] p-0">
-                <a class="px-[8px] py-[5px] text-gray-700 text-xs border border-gray-300 rounded-sm block"
+                <a class="px-[8px] py-[5px] text-gray-700 text-xs border border-gray-300 block rounded-md"
                   href="/title?tags=%E3%81%BE%E3%81%A1%E3%82%AB%E3%83%89%E3%81%BE%E3%81%9E%E3%81%8F">#まちカドまぞく</a>
               </li>
             </ul>
-            <p class="mt-2 text-xs font-medium">発刊：2015.11.27 〜</p>
+            <p class="mt-2 text-xs font-medium">发售日：2015.11.27</p>
             <div class="border-t-2 border-solid border-gray-300 py-6 mt-6">
               <h2 class="mb-3.5">
-                <span class="font-bold text-base text-[#242a36] tracking-wide">あらすじストーリー紹介</span>
+                <span class="font-bold text-base text-[#242a36] tracking-wide">漫画简介</span>
               </h2>
               <div id="post-content">
                 <p>15歳のある朝、封印されし魔族の力に目覚めた吉田優子の任務は、ご町内に住む「魔法少女」を倒すこと!?
                   ツノと尻尾は生えたけど、力は普通の女の子以下な優子が「月4万円生活の呪い」解除めざして奮闘する、逆転マジカルヒロイン4コマ!</p>
               </div>
             </div>
+            <div class="border-t-2 border-solid border-gray-300 py-6 mt-6">
+              <h2 class="mb-3.5">
+                <span class="font-bold text-base text-[#242a36] tracking-wide">漫画详情</span>
+              </h2>
+              <div class="py-3 flex">
+                <div class="ListTerm min-w-[6em] text-[#808080] text-sm font-normal">作者</div>
+                <div class="m-0 flex-1 text-[#242a36] text-sm font-medium">
+                  <a class="text-[#0189EC] mr-4 inline-block" href="/author/1703">伊藤いづも</a>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="w-[174px] order-first mx-auto md:ml-auto md:mb-auto md:mx-0 md:order-last md:self-end h-[245px] ">
-            <img class="h-[245px] w-[174px]"
-              src="https://d2ylnsrvo8rdzz.cloudfront.net/v2.0/images/books/4832272519.324.450.resize.jpg" alt="">
+            <img class="h-[245px] w-[174px] rounded-xl"
+              src="https://d2ylnsrvo8rdzz.cloudfront.net/v2.0/images/books/4832272519.324.450.resize.jpg"
+              alt="comic image">
           </div>
         </div>
-
+        <Comment />
       </div>
     </maincolumn>
     <Sidebar>
@@ -75,5 +87,10 @@ export default {
   .info {
     width: calc(100% - 180px);
   }
+}
+
+.ListTerm::after {
+  content: '\FF1A';
+  display: inline;
 }
 </style>
