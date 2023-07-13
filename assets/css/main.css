@@ -4,7 +4,7 @@
 
 body {
   background-color: #f7f7f7;
-  font-family: 'Microsoft Yahei UI',Roboto,'Open Sans',Helvetica,'DejaVu Sans',Arial, sans-serif;
+  font-family: 'Microsoft Yahei UI','Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'BIZ UDPGothic', Meiryo,Roboto,'Open Sans',Helvetica,'DejaVu Sans',Arial, sans-serif;
 }
 /* width */
 ::-webkit-scrollbar {

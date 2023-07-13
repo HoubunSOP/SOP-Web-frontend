@@ -73,15 +73,10 @@ export default {
   mounted () {
     const route = useRoute()
     this.id = route.params.id
-  },
-  setup () {
-    onMounted(() => {
-      window.scrollTo(0, 0)
-    })
   }
 }
 </script>
 
-<style>
+<style scoped>
 @import '@/assets/css/post.css';
 </style>
