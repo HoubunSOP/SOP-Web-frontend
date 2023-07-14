@@ -6,35 +6,35 @@
           <div class="info order-last md:order-first md:mr-4">
             <div class="mb-2 mt-2 md:mt-0">
               <h1 class="mb-[3px] text-lg m-0">
-                <span class="font-bold text-[#242a36]">まちカドまぞく</span>
+                <span class="font-bold text-[#242a36]">{{ name }}</span>
               </h1>
             </div>
             <p class="mb-2.5 m-0 text-sm tracking-wide">
               <a class="inline-block h-7 leading-7 py-0 px-3 bg-[#F2F2F2] rounded-2xl text-[#606060] text-xs mr-2"
                 href="/author/1703">
                 <i class="fa-regular fa-user"></i>
-                伊藤いづも
+                {{ author }}
               </a>
               <a class="inline-block h-7 leading-7 py-0 px-3 bg-[#F2F2F2] rounded-2xl text-[#606060] text-xs"
                 href="/author/1703">
                 <i class="fa-regular fa-star"></i>
-                MangaTimeKiraraCarat
+                {{ magazine }}
               </a>
             </p>
-            <ul class="m-0 p-0 flex flex-wrap">
+            <!--
+              <ul class="m-0 p-0 flex flex-wrap">
               <li class="mt-[10px] mr-[8px] p-0">
                 <a class="px-[8px] py-[5px] text-gray-700 text-xs border border-gray-300 block rounded-md"
                   href="/title?tags=%E3%81%BE%E3%81%A1%E3%82%AB%E3%83%89%E3%81%BE%E3%81%9E%E3%81%8F">#まちカドまぞく</a>
               </li>
             </ul>
-            <p class="mt-2 text-xs font-medium">发售日：2015.11.27</p>
+            -->
+            <p class="mt-2 text-xs font-medium">发售日：{{ date }}</p>
             <div class="border-t-2 border-solid border-gray-300 py-6 mt-6">
               <h2 class="mb-3.5">
                 <span class="font-bold text-base text-[#242a36] tracking-wide">漫画简介</span>
               </h2>
-              <div id="post-content">
-                <p>15歳のある朝、封印されし魔族の力に目覚めた吉田優子の任務は、ご町内に住む「魔法少女」を倒すこと!?
-                  ツノと尻尾は生えたけど、力は普通の女の子以下な優子が「月4万円生活の呪い」解除めざして奮闘する、逆転マジカルヒロイン4コマ!</p>
+              <div id="post-content" v-html="content">
               </div>
             </div>
             <div class="border-t-2 border-solid border-gray-300 py-6 mt-6">
@@ -44,7 +44,19 @@
               <div class="py-3 flex">
                 <div class="ListTerm min-w-[6em] text-[#808080] text-sm font-normal">作者</div>
                 <div class="m-0 flex-1 text-[#242a36] text-sm font-medium">
-                  <a class="text-[#0189EC] mr-4 inline-block" href="/author/1703">伊藤いづも</a>
+                  <a class="text-[#0189EC] mr-4 inline-block" href="/author/1703">{{ author }}</a>
+                </div>
+              </div>
+              <div class="py-3 flex border-t border-gray-200">
+                <div class="ListTerm min-w-[6em] text-[#808080] text-sm font-normal">发售日</div>
+                <div class="m-0 flex-1 text-[#242a36] text-sm font-medium">
+                  <a class="text-[#0189EC] mr-4 inline-block" href="/author/1703">{{ date }}</a>
+                </div>
+              </div>
+              <div class="py-3 flex border-t border-gray-200">
+                <div class="ListTerm min-w-[6em] text-[#808080] text-sm font-normal">连载刊物</div>
+                <div class="m-0 flex-1 text-[#242a36] text-sm font-medium">
+                  <a class="text-[#0189EC] mr-4 inline-block" href="/author/1703">{{ magazine }}</a>
                 </div>
               </div>
             </div>
@@ -58,9 +70,7 @@
         <Comment />
       </div>
     </maincolumn>
-    <Sidebar>
-      <h1>侧边栏</h1>
-    </Sidebar>
+    <Sidebar />
   </mainpage>
 </template>
 
@@ -70,7 +80,11 @@ import { useRoute } from 'vue-router'
 export default {
   data () {
     return {
-      id: null
+      name: "街角魔族",
+      author: "伊藤いづも",
+      magazine: "MangaTimeKiraraCarat",
+      date: "2015.11.27",
+      content: "<p>15歳のある朝、封印されし魔族の力に目覚めた吉田優子の任務は、ご町内に住む「魔法少女」を倒すこと!?ツノと尻尾は生えたけど、力は普通の女の子以下な優子が「月4万円生活の呪い」解除めざして奮闘する、逆転マジカルヒロイン4コマ!</p>"
     }
   },
   mounted () {
