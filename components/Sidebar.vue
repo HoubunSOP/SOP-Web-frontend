@@ -8,6 +8,14 @@
         <SidebarcompsCalendar />
       </div>
     </div>
+    <div class="bg-white bg-opacity-75 rounded-lg">
+      <div class="flex items-center justify-center pt-4">
+        <span class="text-center font-bold text-[#242a36]">发售日历</span>
+      </div>
+      <div class="flex items-center justify-center">
+        <SidebarcompsCalendar />
+      </div>
+    </div>
   </div>
 </template>
 

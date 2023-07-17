@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col">
     <nav
-      class="sticky top-0 z-40 w-full backdrop-blur-md flex-none transition-colors duration-500 lg:z-50 lg:border-b bg-[#3752abb3] shadow-lg">
+      class="sticky top-0 z-[100] w-full backdrop-blur-md flex-none transition-colors duration-500 lg:z-50 lg:border-b bg-[#3752abb3] shadow-lg rounded-b-lg md:rounded-none z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center">
@@ -22,7 +22,7 @@
           <div class="-mr-2 flex md:hidden">
             <!-- Mobile menu button -->
             <button @click="isMobileMenuOpen = !isMobileMenuOpen" type="button"
-              class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+              class="bg-[#3752aba1] inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-200 hover:bg-[#3752abe8] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#3752ab] focus:ring-white"
               aria-controls="mobile-menu" :aria-expanded="isMobileMenuOpen.toString()">
               <span class="sr-only">Open main menu</span>
               <!--
