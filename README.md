@@ -2,6 +2,8 @@
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+测试服务器的部署状态：[![Netlify Status](https://api.netlify.com/api/v1/badges/b12d882b-776e-44e3-a35f-afa249b99909/deploy-status)](https://app.netlify.com/sites/spiffy-phoenix-0cb8a9/deploys)
+
 ## Setup
 
 Make sure to install the dependencies:

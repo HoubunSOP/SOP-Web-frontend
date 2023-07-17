@@ -1,6 +1,7 @@
 <template>
-  <div class="flex flex-col h-screen">
-    <nav class="bg-gray-800">
+  <div class="flex flex-col">
+    <nav
+      class="sticky top-0 z-40 w-full backdrop-blur-md flex-none transition-colors duration-500 lg:z-50 lg:border-b bg-[#3752abb3] shadow-lg">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center">
@@ -10,11 +11,11 @@
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
                 <nuxt-link to="/"
-                  class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</nuxt-link>
+                  class="text-white hover:text-sky-500 px-3 py-2 rounded-md text-sm font-medium">Home</nuxt-link>
                 <nuxt-link to="/"
-                  class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</nuxt-link>
+                  class="text-white hover:text-sky-500 px-3 py-2 rounded-md text-sm font-medium">About</nuxt-link>
                 <nuxt-link to="/"
-                  class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</nuxt-link>
+                  class="text-white hover:text-sky-500 px-3 py-2 rounded-md text-sm font-medium">Contact</nuxt-link>
               </div>
             </div>
           </div>
@@ -63,7 +64,7 @@
     </nav>
 
     <!-- Page content -->
-    <div class="flex-grow overflow-y-auto" data-scroll>
+    <div class="flex-grow" data-scroll>
       <slot />
     </div>
   </div>

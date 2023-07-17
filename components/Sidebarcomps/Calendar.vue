@@ -1,6 +1,6 @@
 <template>
   <ClientOnly>
-    <VCalendar class="!w-full" :attributes="attributes" />
+    <VCalendar class="!w-full m-3" :attributes="attributes" />
   </ClientOnly>
 </template>
 
