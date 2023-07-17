@@ -11,9 +11,9 @@
               <div class="ml-10 flex items-baseline space-x-4">
                 <nuxt-link to="/"
                   class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</nuxt-link>
-                <nuxt-link to="/about"
+                <nuxt-link to="/"
                   class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</nuxt-link>
-                <nuxt-link to="/contact"
+                <nuxt-link to="/"
                   class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</nuxt-link>
               </div>
             </div>
@@ -54,9 +54,9 @@
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <nuxt-link to="/"
             class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</nuxt-link>
-          <nuxt-link to="/about"
+          <nuxt-link to="/"
             class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</nuxt-link>
-          <nuxt-link to="/contact"
+          <nuxt-link to="/"
             class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</nuxt-link>
         </div>
       </div>

@@ -10,13 +10,11 @@
               </h1>
             </div>
             <p class="mb-2.5 m-0 text-sm tracking-wide">
-              <a class="inline-block h-7 leading-7 py-0 px-3 bg-[#F2F2F2] rounded-2xl text-[#606060] text-xs mr-2"
-                href="/author/1703">
+              <a class="inline-block h-7 leading-7 py-0 px-3 bg-[#F2F2F2] rounded-2xl text-[#606060] text-xs mr-2">
                 <i class="fa-regular fa-user"></i>
                 {{ author }}
               </a>
-              <a class="inline-block h-7 leading-7 py-0 px-3 bg-[#F2F2F2] rounded-2xl text-[#606060] text-xs"
-                href="/author/1703">
+              <a class="inline-block h-7 leading-7 py-0 px-3 bg-[#F2F2F2] rounded-2xl text-[#606060] text-xs">
                 <i class="fa-regular fa-star"></i>
                 {{ magazine }}
               </a>
@@ -44,19 +42,19 @@
               <div class="py-3 flex">
                 <div class="ListTerm min-w-[6em] text-[#808080] text-sm font-normal">作者</div>
                 <div class="m-0 flex-1 text-[#242a36] text-sm font-medium">
-                  <a class="text-[#0189EC] mr-4 inline-block" href="/author/1703">{{ author }}</a>
+                  <p class="text-[#0189EC] mr-4 inline-block">{{ author }}</p>
                 </div>
               </div>
               <div class="py-3 flex border-t border-gray-200">
                 <div class="ListTerm min-w-[6em] text-[#808080] text-sm font-normal">发售日</div>
                 <div class="m-0 flex-1 text-[#242a36] text-sm font-medium">
-                  <a class="text-[#0189EC] mr-4 inline-block" href="/author/1703">{{ date }}</a>
+                  <p class="text-[#0189EC] mr-4 inline-block">{{ date }}</p>
                 </div>
               </div>
               <div class="py-3 flex border-t border-gray-200">
                 <div class="ListTerm min-w-[6em] text-[#808080] text-sm font-normal">连载刊物</div>
                 <div class="m-0 flex-1 text-[#242a36] text-sm font-medium">
-                  <a class="text-[#0189EC] mr-4 inline-block" href="/author/1703">{{ magazine }}</a>
+                  <p class="text-[#0189EC] mr-4 inline-block">{{ magazine }}</p>
                 </div>
               </div>
             </div>
