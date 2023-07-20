@@ -24,12 +24,12 @@ useHead({
     },
     {
       rel: 'stylesheet',
-      href: 'https://unpkg.com/@waline/client@v2/dist/waline.css'
+      href: 'https://cdn.jsdelivr.net/npm/@waline/client@2/dist/waline.min.css'
     }
   ],
   script: [
     {
-      src: 'https://unpkg.com/@waline/client@v2/dist/waline.js',
+      src: 'https://fastly.jsdelivr.net/npm/@waline/client@2/dist/waline.js',
       type: 'text/javascript',
       pbody: true,
       defer: true

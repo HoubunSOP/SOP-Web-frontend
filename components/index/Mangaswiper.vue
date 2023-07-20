@@ -4,7 +4,7 @@
       未来发售的单行本🔭
     </span>
   </div>
-  <swiper slidesPerView="auto" :spaceBetween="10" :freeMode="'true'" :mousewheel="'true'" :scrollbar="{
+  <swiper slidesPerView="auto" :spaceBetween="10" :freeMode="true" :mousewheel="true" :scrollbar="{
     el: '.swiper-scrollbar',
     draggable: true,
     snapOnRelease: false,

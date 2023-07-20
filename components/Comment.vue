@@ -12,8 +12,8 @@ export default {
       path: this.$route.path,
       lang: 'zh',
       emoji: [
-        '//unpkg.com/@waline/emojis@1.1.0/bilibili',
-        'https://unpkg.com/@waline/emojis@1.1.0/tw-emoji',
+        'https://fastly.jsdelivr.net/gh/walinejs/emojis@1.1.0/bilibili',
+        'https://fastly.jsdelivr.net/gh/walinejs/emojis@1.1.0/tw-emoji',
 
       ],
       requiredMeta: ['nick', 'mail'],
