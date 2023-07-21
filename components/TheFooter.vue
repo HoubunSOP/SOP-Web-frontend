@@ -11,28 +11,43 @@
           <ul>
             <li>
               <a href="https://web6or1pcx.feishu.cn/docx/HarndmlnwoFDMqxjxCzcW86anRc?from=from_copylink" target="_blank"
-                class="text-gray-400 hover:text-white">隐私协议</a>
+                class="text-gray-400 hover:text-white">
+                隐私协议
+              </a>
             </li>
             <li>
               <a href="https://web6or1pcx.feishu.cn/docx/XiAHddZ9Eopchbxw1OAcVsEOnve?from=from_copylink" target="_blank"
-                class="text-gray-400 hover:text-white">网站待办看板</a>
+                class="text-gray-400 hover:text-white">
+                网站待办看板
+              </a>
             </li>
             <li>
               <a href="https://web6or1pcx.feishu.cn/docx/LqA6d7c2JoTSfKxHGADcimXhncz?from=from_copylink" target="_blank"
-                class="text-gray-400 hover:text-white">免责说明</a>
+                class="text-gray-400 hover:text-white">
+                免责说明
+              </a>
             </li>
           </ul>
         </div>
         <div class="w-full md:w-1/3">
           <h3 class="text-gray-100 font-bold mb-2">联系我们</h3>
-          <p class="text-gray-400">
-            <a target="_blank">bilibili</a>
+          <p class="text-gray-400 hover:text-white">
+            <a target="_blank" href="https://space.bilibili.com/1585955812">
+              <i class="fa-brands fa-bilibili" style="color: #0084ff;"></i>
+              bilibili
+            </a>
           </p>
           <p class="text-gray-400">
-            <a 隐私协议>bilibili</a>
+            <a target="_blank">
+              <i class="fa-brands fa-qq" style="color: #b62b2b;"></i>
+              水群2群：729479808
+            </a>
           </p>
           <p class="text-gray-400">
-            <a target="_blank">bilibili</a>
+            <a target="_blank">
+              <i class="fa-brands fa-qq" style="color: #b62b2b;"></i>
+              组群：478991875
+            </a>
           </p>
         </div>
       </div>
