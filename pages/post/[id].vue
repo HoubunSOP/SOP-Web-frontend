@@ -53,6 +53,7 @@
               target="_blank">水曜日のシリウス</a>」で転スラ（本家）と並んでるしね。</p>
         </div>
       </article>
+      <Comment />
     </maincolumn>
     <Sidebar />
   </mainpage>

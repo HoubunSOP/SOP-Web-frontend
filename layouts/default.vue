@@ -67,7 +67,9 @@
     <div class="flex-grow" data-scroll>
       <slot />
     </div>
+    <ToTop />
   </div>
+  <TheFooter />
 </template>
 
 <script>

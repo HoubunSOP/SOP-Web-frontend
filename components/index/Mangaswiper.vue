@@ -4,7 +4,7 @@
       未来发售的单行本🔭
     </span>
   </div>
-  <swiper slidesPerView="auto" :spaceBetween="10" :freeMode="true" :mousewheel="true" :scrollbar="{
+  <swiper slidesPerView="auto" :spaceBetween="10" :scrollbar="{
     el: '.swiper-scrollbar',
     draggable: true,
     snapOnRelease: false,
@@ -18,7 +18,8 @@
           <nuxt-link :to="'/comic/' + index">
             <img alt="" width="1055" height="1500" class="rounded-md max-w-full !h-auto"
               src="https://s2.loli.net/2023/02/05/MCwSJxVNW8zrF12.jpg">
-            <img class="rounded-md block my-1.5 mx-auto" src="https://houbunsha.co.jp/img/mv_img/label_4.gif">
+            <img class="rounded-md block my-1.5 mx-auto" src="https://houbunsha.co.jp/img/mv_img/label_4.gif"
+              alt="mv_img">
           </nuxt-link>
           <p>
           </p>
