@@ -18,8 +18,8 @@
           <nuxt-link :to="'/comic/' + index">
             <nuxt-img loading="lazy" alt="manga cover" width="1055" height="1500" class="rounded-md max-w-full !h-auto"
               src="https://s2.loli.net/2023/02/05/MCwSJxVNW8zrF12.jpg" />
-            <nuxt-img loading="lazy" lass="rounded-md block my-1.5 mx-auto"
-              src="https://houbunsha.co.jp/img/mv_img/label_4.gif" alt="mv_img" />
+            <nuxt-img class="rounded-md block my-1.5 mx-auto" src="https://houbunsha.co.jp/img/mv_img/label_4.gif"
+              alt="mv_img" />
           </nuxt-link>
           <p>
           </p>

@@ -10,12 +10,9 @@
             </nuxt-link>
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
-                <nuxt-link to="/"
-                  class="text-white hover:text-sky-500 px-3 py-2 rounded-md text-sm font-medium">Home</nuxt-link>
-                <nuxt-link to="/"
-                  class="text-white hover:text-sky-500 px-3 py-2 rounded-md text-sm font-medium">About</nuxt-link>
-                <nuxt-link to="/"
-                  class="text-white hover:text-sky-500 px-3 py-2 rounded-md text-sm font-medium">Contact</nuxt-link>
+                <nuxt-link v-for="navPage in navPages" :key="navPage.name" :to="navPage.path"
+                  class="text-white hover:text-sky-500 px-3 py-2 rounded-md text-sm font-medium">{{ navPage.name
+                  }}</nuxt-link>
               </div>
             </div>
           </div>
@@ -24,7 +21,7 @@
             <button @click="isMobileMenuOpen = !isMobileMenuOpen" type="button"
               class="bg-[#3752aba1] inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-200 hover:bg-[#3752abe8] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#3752ab] focus:ring-white"
               aria-controls="mobile-menu" :aria-expanded="isMobileMenuOpen.toString()">
-              <span class="sr-only">Open main menu</span>
+              <span class="sr-only">打开菜单</span>
               <!--
                 Heroicon name:bars
 
@@ -53,12 +50,9 @@
       <!-- Mobile menu, show/hide based on menu state. -->
       <div :class="{ 'block': isMobileMenuOpen, 'hidden': !isMobileMenuOpen }" class="md:hidden" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <nuxt-link to="/"
-            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</nuxt-link>
-          <nuxt-link to="/"
-            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</nuxt-link>
-          <nuxt-link to="/"
-            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</nuxt-link>
+          <nuxt-link v-for="navPage in navPages" :key="navPage.name" :to="navPage.path"
+            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">{{ navPage.name
+            }}</nuxt-link>
         </div>
       </div>
     </nav>
@@ -78,6 +72,21 @@ export default {
     return {
       isMobileMenuOpen: false,
       isProfileOpen: true,
+      navPages: [
+        {
+          name: "文章列表",
+          path: "/list/post"
+        }, {
+          name: "文章分类",
+          path: "/category/post"
+        }, {
+          name: "漫画列表",
+          path: "/list/comic"
+        }, {
+          name: "漫画分类",
+          path: "/category/comic"
+        },
+      ]
     }
   },
 }
