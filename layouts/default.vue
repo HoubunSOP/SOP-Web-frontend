@@ -6,7 +6,7 @@
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center">
             <nuxt-link to="/" class="flex-shrink-0">
-              <img class="h-8 w-auto" src="/logo.svg" alt="Logo">
+              <nuxt-img loading="lazy" class="h-8 w-auto" src="/logo.svg" alt="Logo" />
             </nuxt-link>
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">

@@ -54,7 +54,7 @@
       <div class="mt-4 border-t border-gray-700 pt-4">
         <div class="flex items-center justify-between">
           <a class="mGeneralLink" href="/">
-            <img alt="comicspace" class="aImage" height="28" src="/logo.svg" width="128">
+            <nuxt-img loading="lazy" alt="comicspace" class="aImage" height="28" src="/logo.svg" width="128" />
           </a>
           <p class="text-[#808080] text-sm">©芳文观星台</p>
         </div>

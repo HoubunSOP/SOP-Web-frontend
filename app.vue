@@ -2,7 +2,7 @@
   <div class="body">
     <SeoKit />
     <NuxtLayout>
-      <NuxtLoadingIndicator />
+      <NuxtLoadingIndicator class="!opacity-100 load-rogress" />
       <NuxtPage />
     </NuxtLayout>
   </div>
@@ -37,3 +37,9 @@ useHead({
   ]
 })
 </script>
+<style scoped>
+.load-rogress {
+  background-color: #098bf5;
+  box-shadow: 0 0 10px #098bf5, 0 0 5px #098bf5;
+}
+</style>

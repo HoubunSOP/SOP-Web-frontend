@@ -1,9 +1,9 @@
 <template>
-  <p class="backToTop">
+  <p class="backToTop hidden md:block">
     <a class="scroll-to-top" @click="scrollToTop" v-show="showButton">
       <picture>
         <source type="image/webp" srcset="https://hoshitele-anime.com/dist/img/common/btn_backToTop.webp">
-        <img src="https://hoshitele-anime.com/dist/img/common/btn_backToTop.png" alt="PAGE TOP" width="60px">
+        <img src="https://hoshitele-anime.com/dist/img/common/btn_backToTop.png" alt="PAGE TOP" width="60px" />
       </picture>
     </a>
   </p>

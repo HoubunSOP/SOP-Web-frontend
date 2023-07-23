@@ -60,9 +60,9 @@
             </div>
           </div>
           <div class="w-[174px] order-first mx-auto md:ml-auto md:mb-auto md:mx-0 md:order-last md:self-end h-[245px] ">
-            <img class="h-[245px] w-[174px] rounded-xl"
+            <nuxt-img loading="lazy" class="h-[245px] w-[174px] rounded-xl"
               src="https://d2ylnsrvo8rdzz.cloudfront.net/v2.0/images/books/4832272519.324.450.resize.jpg"
-              alt="comic image">
+              alt="comic image" />
           </div>
         </div>
         <Comment />

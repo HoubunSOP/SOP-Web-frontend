@@ -17,7 +17,7 @@
             「星灵感应」特设情报页
           </h1>
           <div class="mb-6 text-center bg-[#F5F5F5] max-w-[100%] h-auto rounded-md">
-            <img src="https://www.fwgxt.top/usr/uploads/2023/02/2146404301.webp" alt="">
+            <nuxt-img loading="lazy" src="https://www.fwgxt.top/usr/uploads/2023/02/2146404301.webp" alt="" />
           </div>
         </header>
         <div id="post-content">
