@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col transition-all ease-in-out">
     <nav
       class="sticky top-0 z-[100] w-full backdrop-blur-md flex-none transition-colors duration-500 lg:z-50 lg:border-b bg-[#3752abb3] shadow-lg rounded-b-lg md:rounded-none z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

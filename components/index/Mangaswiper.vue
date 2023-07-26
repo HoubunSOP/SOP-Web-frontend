@@ -1,7 +1,8 @@
 <template>
   <div class="pb-1 pt-5 px-5 my-4">
     <span class="text-lg text-white -ml-1.5 py-1 px-2.5 bg-[#4453c1] rounded">
-      未来发售的单行本🔭
+      未来发售的单行本
+      <i class="fa-duotone fa-telescope"></i>
     </span>
   </div>
   <swiper slidesPerView="auto" :spaceBetween="10" :scrollbar="{

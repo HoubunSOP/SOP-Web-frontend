@@ -1,6 +1,8 @@
 <template>
   <h3 class="text-white mb-2 mt-10 mx-5 py-2.5 bg-[#4453c1] rounded-2xl text-center">
-    🌟观星资讯✨
+    <i class="fa-duotone fa-stars" style="--fa-primary-color: #fcd53f; --fa-secondary-color: #fcd53f;"></i>
+    观星资讯
+    <i class="fa-duotone fa-moon-stars" style="--fa-primary-color: #fcd53f; --fa-secondary-color: #fcd53f;"></i>
   </h3>
   <div class="ContentContainer">
     <nuxt-link v-for="index in 10" :key="index"
@@ -19,11 +21,11 @@
       </div>
       <div class="absolute bottom-2.5">
         <span class="text-xs md:text-sm font-medium tracking-wide text-[#808080]">
-          <i class="fa-regular fa-folder-open"></i>
+          <i class="fa-duotone fa-list-tree"></i>
           コミスペ！
         </span>
         <span class="text-xs md:text-sm font-medium tracking-wide text-[#808080]">
-          <i class="fa-regular fa-calendar"></i>
+          <i class="fa-duotone fa-calendar-week"></i>
           2022.01.11
         </span>
       </div>
