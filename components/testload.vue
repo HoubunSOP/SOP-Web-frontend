@@ -2,7 +2,7 @@
   <div class="fixed inset-0 flex flex-col justify-center items-center z-[9999] bg-black/50 load-screen"
     :class="{ 'willclose': willclose == true }">
     <div class="text-center">
-      <h1 class="text-9xl font-bold text-white">
+      <h1 class="text-4xl md:text-9xl font-bold text-white">
         <span v-if="loadnum >= 10">H</span>
         <span v-if="loadnum >= 20">O</span>
         <span v-if="loadnum >= 30">U</span>
@@ -13,9 +13,9 @@
         <span v-if="loadnum >= 80">O</span>
         <span v-if="loadnum >= 90">P</span>
       </h1>
-      <p class="text-white text-2xl font-bold load-text" :class="{ 'loaded': loadnum > 99 }" v-if="loadnum >= 95">芳文观星台
+      <p class="text-white text-lg md:text-2xl font-bold load-text" :class="{ 'loaded': loadnum > 99 }"
+        v-if="loadnum >= 95">芳文观星台
       </p>
-      <p class="text-white text-2xl font-bold">{{ loadnum }}%</p>
     </div>
   </div>
 </template>
