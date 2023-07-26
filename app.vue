@@ -1,5 +1,7 @@
 <template>
-  <testload v-if="loading" :loadnum="num" :willclose="willclose" />
+  <ClientOnly>
+    <testload v-if="loading" :loadnum="num" :willclose="willclose" />
+  </ClientOnly>
   <div class="body">
     <SeoKit />
     <NuxtLayout>
