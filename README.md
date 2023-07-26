@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://cdn.staticaly.com/gh/HoubunSOP/SOP-Web-frontend/main/public/logo black.png" width="200" height="200" alt="houbunsop">
+    <img src="https://cdn.staticaly.com/gh/HoubunSOP/SOP-Web-frontend/main/public/logo black.png" width="200" height="auto" alt="houbunsop">
 </p>
 
 <div align="center">
