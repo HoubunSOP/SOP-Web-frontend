@@ -4,7 +4,6 @@
 
 <div align="center">
 
-
 # 🔭芳文观星台官网前端🌟
 
 
@@ -102,4 +101,8 @@ pnpm run preview
 # yarn
 yarn preview
 ```
-## 
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FHoubunSOP%2FSOP-Web-frontend.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FHoubunSOP%2FSOP-Web-frontend?ref=badge_large)
+
