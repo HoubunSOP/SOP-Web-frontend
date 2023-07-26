@@ -1,4 +1,5 @@
 <template>
+  <testload v-if="loading" :loadnum="num" :willclose="willclose" />
   <div class="flex flex-col transition-all ease-in-out">
     <nav
       class="sticky top-0 z-[100] w-full backdrop-blur-md flex-none transition-colors duration-500 lg:z-50 lg:border-b bg-[#3752abb3] shadow-lg rounded-b-lg md:rounded-none z-50">
@@ -68,6 +69,42 @@
 
 <script>
 export default {
+  setup () {
+    const num = ref(0)
+    const loading = ref(true)
+    const isMounted = ref(false)
+    const willclose = ref(false)
+
+    const increaseNum = () => {
+      if (num.value < 99) {
+        if (isMounted.value) {
+          num.value += 1
+        } else {
+          num.value += 0.1
+        }
+        setTimeout(increaseNum, 10)
+      } else {
+        setTimeout(() => {
+          willclose.value = true
+          num.value = 100
+        }, 2000)
+        setTimeout(() => {
+          loading.value = false
+          num.value = 100
+        }, 3000)
+      }
+    }
+
+    increaseNum()
+    onMounted(() => {
+      isMounted.value = true
+    })
+    return {
+      num,
+      loading,
+      willclose
+    }
+  },
   data () {
     return {
       isMobileMenuOpen: false,

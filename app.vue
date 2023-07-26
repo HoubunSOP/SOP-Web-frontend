@@ -1,7 +1,4 @@
 <template>
-  <ClientOnly>
-    <testload v-if="loading" :loadnum="num" :willclose="willclose" />
-  </ClientOnly>
   <div class="body">
     <SeoKit />
     <NuxtLayout>
@@ -11,38 +8,6 @@
   </div>
 </template>
 <script setup>
-const num = ref(0)
-const loading = ref(true)
-const isMounted = ref(false)
-const willclose = ref(false)
-
-const increaseNum = () => {
-  if (num.value < 99) {
-    if (isMounted.value) {
-      num.value += 1
-    } else {
-      num.value += 0.1
-    }
-    setTimeout(increaseNum, 10)
-  } else {
-    setTimeout(() => {
-      willclose.value = true
-      num.value = 100
-    }, 2000)
-    setTimeout(() => {
-      loading.value = false
-      num.value = 100
-    }, 3000)
-  }
-}
-
-increaseNum()
-onMounted(() => {
-  isMounted.value = true
-})
-
-
-
 useHead({
   htmlAttrs: {
     lang: 'zh-CN'
