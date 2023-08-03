@@ -30,6 +30,7 @@
           <p class="mt-[8px] text-center whitespace-nowrap text-[#808080] text-[10px] font-normal">2023.08.09发布</p>
         </div>
       </div>
+      <compsPagination :current-page="currentPage" :total-pages="totalPages" @page-changed="onPageChanged" />
     </maincolumn>
     <Sidebar />
   </mainpage>
@@ -37,7 +38,22 @@
 
 <script>
 export default {
-
+  data () {
+    return {
+      currentPage: 1,
+      totalPages: 10,
+      testnum: 1,
+      // 其他请求参数
+    };
+  },
+  methods: {
+    onPageChanged (page) {
+      this.currentPage = page;
+      // 更新您的 API 请求参数
+      // 例如：this.fetchData(this.currentPage);
+      this.testnum = this.testnum + 1;
+    },
+  },
 }
 </script>
 
