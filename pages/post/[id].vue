@@ -411,6 +411,10 @@
               </span>
               って聞かれて、自分で自分のギャグを説明するのが恥ずかしかったです……。
             </p>
+            <blockquote>
+              <p>test</p>
+            </blockquote>
+
             <p class="text-center">
               <img permalink="" data-src="https://media.comicspace.jp/wp-content/uploads/2021/10/toriming008.jpg" alt=""
                 width="350" height="1088" class="alignnone size-full image-zoomable"
