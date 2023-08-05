@@ -10,6 +10,15 @@ export default {
     visibility: { type: String, default: 'focus' },
     hideIndicators: Boolean,
   },
+  async mounted () {
+    try {
+      const response = await this.$api.get('https://sop-api.sakurakoi.top/index/calendar');
+      this.lists = response.data.messages;
+      console.log(response.data.messages)
+    } catch (error) {
+      console.error(error);
+    }
+  },
   data () {
     const lists = [
       {

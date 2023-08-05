@@ -5,11 +5,11 @@
     <i class="fa-duotone fa-moon-stars" style="--fa-primary-color: #fcd53f; --fa-secondary-color: #fcd53f;"></i>
   </h3>
   <div class="ContentContainer">
-    <nuxt-link v-for="index in 10" :key="index"
+    <nuxt-link v-for="index in articles.articles" :key="index.id"
       class="pt-[26px] pb-[15px] px-6 relative rounded-md flex flex-wrap overflow-hidden transition-all hover:bg-slate-100 hover:scale-[1.02] ease-in-out"
-      :to="'/post/' + index">
+      :to="'/post/' + index.id">
       <p class="aText overflow-hidden h-[3.8rem] mr-5 text-sm font-medium line-clamp-3">
-        「ごらく部」でまったり日常を送る女子中学生4人組が異世界転生！？人気作「ゆるゆり」のスピンオフ作品！{{ testnum }}
+        {{ index.title }}
       </p>
       <div
         class="justify-self-end ml-auto w-[120px] h-[72px] md:w-[142px] md:h-[88px] rounded-md overflow-hidden relative">
@@ -26,7 +26,7 @@
         </span>
         <span class="text-xs md:text-sm font-medium tracking-wide text-[#808080]">
           <i class="fa-duotone fa-calendar-week"></i>
-          2022.01.11
+          {{ index.date }}
         </span>
       </div>
     </nuxt-link>
@@ -41,8 +41,17 @@ export default {
       currentPage: 1,
       totalPages: 10,
       testnum: 1,
-      // 其他请求参数
+      articles: [],
     };
+  },
+  async mounted () {
+    try {
+      const response = await this.$api.get('https://sop-api.sakurakoi.top/post/list?limit=10&page=1');
+      this.articles = response.data.messages;
+      console.log(response.data.messages)
+    } catch (error) {
+      console.error(error);
+    }
   },
   methods: {
     onPageChanged (page) {

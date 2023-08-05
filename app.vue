@@ -8,6 +8,7 @@
   </div>
 </template>
 <script setup>
+
 useHead({
   htmlAttrs: {
     lang: 'zh-CN'
@@ -31,7 +32,7 @@ useHead({
     {
       src: 'https://fastly.jsdelivr.net/npm/@waline/client@2/dist/waline.js',
       type: 'text/javascript',
-      pbody: true,
+      body: true,
       defer: true
     }
   ]

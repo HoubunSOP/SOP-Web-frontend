@@ -10,6 +10,7 @@
 </template>
 
 <script setup>
+
 useSeoMeta({
   title: '芳文观星台',
   description: '专注于芳文相关内容!',

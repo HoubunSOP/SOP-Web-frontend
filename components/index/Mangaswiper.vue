@@ -11,21 +11,21 @@
     snapOnRelease: false,
     dragSize: 'auto',
   }" :modules="modules" class="MangaSwiper select-none rounded-md">
-    <swiper-slide v-for="index in 10" :key="index">
+    <swiper-slide v-for="index in comics" :key="index.id">
       <div class="SwiperCard hover:opacity-80 transition-opacity ease-in-out">
         <div class="rounded-tl-md absolute w-12 h-5 text-center text-white bg-black/[0.5]">
-          7/26 </div>
+          {{ index.date }} </div>
         <div>
-          <nuxt-link :to="'/comic/' + index">
+          <nuxt-link :to="'/comic/' + index.id">
             <nuxt-img loading="lazy" alt="manga cover" width="1055" height="1500" class="rounded-md max-w-full !h-auto"
-              src="https://s2.loli.net/2023/02/05/MCwSJxVNW8zrF12.jpg" />
+              :src="index.cover" />
             <nuxt-img class="rounded-md block my-1.5 mx-auto" src="https://houbunsha.co.jp/img/mv_img/label_4.gif"
               alt="mv_img" />
           </nuxt-link>
           <p>
           </p>
           <div class="text-sm text-center">
-            恋爱小行星5 </div>
+            {{ index.name }} </div>
         </div>
       </div>
     </swiper-slide>
@@ -48,6 +48,20 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
+  },
+  async mounted () {
+    try {
+      const response = await this.$api.get('https://sop-api.sakurakoi.top/index/get_manga_list');
+      this.comics = response.data.message;
+      console.log(response.data.message)
+    } catch (error) {
+      console.error(error);
+    }
+  },
+  data () {
+    return {
+      comics: []
+    }
   },
   setup () {
     return {
