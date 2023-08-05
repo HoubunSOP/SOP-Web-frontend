@@ -1,9 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['nuxt-typed-router', '@nuxt/image','@samk-dev/nuxt-vcalendar'],
+  modules: ['nuxt-typed-router', '@nuxt/image', '@samk-dev/nuxt-vcalendar'],
   css: ['~/assets/css/main.css'],
-  plugins: [{ src: '~/plugins/scroll.client.ts', ssr: false }],
+  plugins: [
+    { src: '~/plugins/scroll.client.ts', ssr: false },
+    { src: '~/plugins/medium-zoom.client.ts', ssr: false },
+  ],
   runtimeConfig: {
     // Private config that is only available on the server
     apiSecret: '123',

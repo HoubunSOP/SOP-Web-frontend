@@ -48,7 +48,7 @@
               <a class="imageAnchor" href="https://media.comicspace.jp/archives/18988/toriming001">
                 <img permalink="https://media.comicspace.jp/archives/18988/toriming001"
                   data-src="https://media.comicspace.jp/wp-content/uploads/2021/10/toriming001.jpg" alt="" width="400"
-                  height="568" class="alignnone size-full wp-image-18997"
+                  height="568" class="alignnone size-full image-zoomable"
                   src="https://media.comicspace.jp/wp-content/uploads/2021/10/toriming001.jpg">
               </a>
               <br>
@@ -98,7 +98,7 @@
               <a class="imageAnchor" href="https://media.comicspace.jp/archives/18988/toriming002">
                 <img permalink="https://media.comicspace.jp/archives/18988/toriming002"
                   data-src="https://media.comicspace.jp/wp-content/uploads/2021/10/toriming002.jpg" alt="" width="400"
-                  height="564" class="alignnone size-full wp-image-18998"
+                  height="564" class="alignnone size-full image-zoomable"
                   src="https://media.comicspace.jp/wp-content/uploads/2021/10/toriming002.jpg">
               </a>
               <br>
@@ -187,7 +187,7 @@
             </p>
             <p class="text-center">
               <img permalink="" data-src="https://media.comicspace.jp/wp-content/uploads/2021/10/toriming003.jpg" alt=""
-                width="500" height="793" class="alignnone size-full wp-image-18999"
+                width="500" height="793" class="alignnone size-full image-zoomable"
                 src="https://media.comicspace.jp/wp-content/uploads/2021/10/toriming003.jpg">
               <br>
               <span class="caption">
@@ -239,7 +239,7 @@
             </p>
             <p class="text-center">
               <img permalink="" data-src="https://media.comicspace.jp/wp-content/uploads/2021/10/toriming004.jpg" alt=""
-                width="350" height="277" class="alignnone size-full wp-image-19000"
+                width="350" height="277" class="alignnone size-full image-zoomable"
                 src="https://media.comicspace.jp/wp-content/uploads/2021/10/toriming004.jpg">
               <br>
               <span class="caption">
@@ -268,7 +268,7 @@
             </p>
             <p class="text-center">
               <img permalink="" data-src="https://media.comicspace.jp/wp-content/uploads/2021/10/toriming005.jpg" alt=""
-                width="500" height="376" class="alignnone size-full wp-image-19001"
+                width="500" height="376" class="alignnone size-full image-zoomable"
                 src="https://media.comicspace.jp/wp-content/uploads/2021/10/toriming005.jpg">
               <br>
               <span class="caption">
@@ -308,7 +308,7 @@
             </p>
             <p class="text-center">
               <img permalink="" data-src="https://media.comicspace.jp/wp-content/uploads/2021/10/toriming006.jpg" alt=""
-                width="350" height="488" class="alignnone size-full wp-image-19002"
+                width="350" height="488" class="alignnone size-full image-zoomable"
                 src="https://media.comicspace.jp/wp-content/uploads/2021/10/toriming006.jpg">
               <br>
               <span class="caption">
@@ -353,7 +353,7 @@
             </p>
             <p class="text-center">
               <img permalink="" data-src="https://media.comicspace.jp/wp-content/uploads/2021/10/toriming007.jpg" alt=""
-                width="350" height="940" class="alignnone size-full wp-image-19003"
+                width="350" height="940" class="alignnone size-full image-zoomable"
                 src="https://media.comicspace.jp/wp-content/uploads/2021/10/toriming007.jpg">
               <br>
               <span class="caption">
@@ -413,7 +413,7 @@
             </p>
             <p class="text-center">
               <img permalink="" data-src="https://media.comicspace.jp/wp-content/uploads/2021/10/toriming008.jpg" alt=""
-                width="350" height="1088" class="alignnone size-full wp-image-19004"
+                width="350" height="1088" class="alignnone size-full image-zoomable"
                 src="https://media.comicspace.jp/wp-content/uploads/2021/10/toriming008.jpg">
               <br>
               <span class="caption">
