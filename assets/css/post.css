@@ -55,6 +55,8 @@
   max-width: 100%;
   height: auto;
   margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #post-content p {
@@ -62,40 +64,28 @@
 }
 
 #post-content p a {
-  color: #eb6100;
-  border-bottom: 1px dotted #eb6100;
+  color: #0081eb;
+  border-bottom: 1px dotted #0081eb;
 }
 
 #post-content .text-center {
   text-align: center;
 }
 
-#post-content .underline_yellow {
-  background: url(//media.comicspace.jp/wp-content/themes/comispe/assets/img/underline_yellow@2x.png)
+#post-content .underline {
+  background: url(/img/underline.png)
     repeat-x left bottom;
   background-size: 6px 6px;
 }
 
-#post-content .underline_gray {
-  background: url(//media.comicspace.jp/wp-content/themes/comispe/assets/img/underline_gray@2x.png)
-    repeat-x left bottom;
-  background-size: 6px 6px;
-}
-
-#post-content .bgline_yellow {
-  background: url(//media.comicspace.jp/wp-content/themes/comispe/assets/img/bgline_yellow@2x.png)
-    repeat left bottom;
-  background-size: 6px 24px;
-}
-
-#post-content .bgline_gray {
-  background: url(//media.comicspace.jp/wp-content/themes/comispe/assets/img/bgline_gray@2x.png)
+#post-content .bgline {
+  background: url(/img/bgline.png)
     repeat left bottom;
   background-size: 6px 24px;
 }
 
 #post-content .highlight {
-  background-color: #fff330;
+  background-color: #559fff;
 }
 
 #post-content iframe {
@@ -115,7 +105,7 @@
   line-height: 1.4em;
   margin-bottom: 2em;
   margin-top: 30px;
-  border-left: 4px solid #ffc855;
+  border-left: 4px solid #559fff;
   padding-left: 14px;
 }
 
@@ -166,8 +156,8 @@
 }
 
 #post-content ul.index a {
-  color: #eb6100;
-  border-bottom: 1px dotted #eb6100;
+  color: #0081eb;
+  border-bottom: 1px dotted #0081eb;
 }
 
 #post-content ul.index ul {
@@ -222,7 +212,7 @@
   display: block;
   font-size: 14px;
   line-height: 23px;
-  color: #eb6100;
+  color: #0081eb;
   text-decoration: underline;
   padding: 15px;
   border: 1px solid #e1e1e1;
