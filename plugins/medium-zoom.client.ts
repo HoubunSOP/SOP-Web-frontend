@@ -2,7 +2,7 @@ import { defineNuxtPlugin } from '#app'
 import mediumZoom, { Zoom } from 'medium-zoom'
 
 export default defineNuxtPlugin((nuxtApp) => {
-  const selector = '.image-zoomable'
+  const selector = '#post-content'
   const zoom: Zoom = mediumZoom(selector, {})
 
   // (re-)init for newly rendered page, also to work in SPA mode (client-side routing)

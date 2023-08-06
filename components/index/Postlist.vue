@@ -5,7 +5,7 @@
     <i class="fa-duotone fa-moon-stars" style="--fa-primary-color: #fcd53f; --fa-secondary-color: #fcd53f;"></i>
   </h3>
   <div class="ContentContainer">
-    <nuxt-link v-for="index in articles.articles" :key="index.id"
+    <nuxt-link v-for="index in articles" :key="index.id"
       class="pt-[26px] pb-[15px] px-6 relative rounded-md flex flex-wrap overflow-hidden transition-all hover:bg-slate-100 hover:scale-[1.02] ease-in-out"
       :to="'/post/' + index.id">
       <p class="aText overflow-hidden h-[3.8rem] mr-5 text-sm font-medium line-clamp-3">
@@ -20,11 +20,12 @@
         </div>
       </div>
       <div class="absolute bottom-2.5">
-        <span class="text-xs md:text-sm font-medium tracking-wide text-[#808080]">
+        <nuxt-link :to="{ path: '/list/post', query: { c: index.category_id } }"
+          class="text-xs md:text-sm font-medium tracking-wide text-[#808080]">
           <i class="fa-duotone fa-list-tree"></i>
-          コミスペ！
-        </span>
-        <span class="text-xs md:text-sm font-medium tracking-wide text-[#808080]">
+          {{ index.category_name }}
+        </nuxt-link>
+        <span class="text-xs md:text-sm font-medium tracking-wide text-[#808080] pl-2">
           <i class="fa-duotone fa-calendar-week"></i>
           {{ index.date }}
         </span>
@@ -36,29 +37,39 @@
 
 <script>
 export default {
+  setup () {
+    const runtimeConfig = useRuntimeConfig()
+    const totalPages = ref(1)
+    const articles = ref([{
+      "id": 0,
+      "title": "",
+      "date": "",
+      "cover": "",
+      "category_id": "",
+      "category_name": ""
+    }])
+    const currentPage = ref(1)
+    const { data: count } = useFetch(async () => {
+      const response = await fetch(runtimeConfig.public.apiserver + '/post/list?limit=10&page=' + currentPage.value)
+      const data = await response.json()
+      articles.value = data.message.articles
+      totalPages.value = data.message.total_pages
+    })
+    return {
+      totalPages,
+      articles,
+      currentPage,
+      count
+    }
+  },
   data () {
     return {
       currentPage: 1,
-      totalPages: 10,
-      testnum: 1,
-      articles: [],
     };
-  },
-  async mounted () {
-    try {
-      const response = await this.$api.get('https://sop-api.sakurakoi.top/post/list?limit=10&page=1');
-      this.articles = response.data.messages;
-      console.log(response.data.messages)
-    } catch (error) {
-      console.error(error);
-    }
   },
   methods: {
     onPageChanged (page) {
       this.currentPage = page;
-      // 更新您的 API 请求参数
-      // 例如：this.fetchData(this.currentPage);
-      this.testnum = this.testnum + 1;
     },
   },
 }

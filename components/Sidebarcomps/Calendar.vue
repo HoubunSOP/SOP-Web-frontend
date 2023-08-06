@@ -10,24 +10,21 @@ export default {
     visibility: { type: String, default: 'focus' },
     hideIndicators: Boolean,
   },
-  async mounted () {
-    try {
-      const response = await this.$api.get('https://sop-api.sakurakoi.top/index/calendar');
-      this.lists = response.data.messages;
-      console.log(response.data.messages)
-    } catch (error) {
-      console.error(error);
+  setup () {
+    const runtimeConfig = useRuntimeConfig()
+    const lists = ref([])
+    useFetch(async () => {
+      const response = await fetch(runtimeConfig.public.apiserver + '/index/calendar')
+      const data = await response.json()
+
+      lists.value = data.message
+    })
+    return {
+      lists
     }
   },
   data () {
-    const lists = [
-      {
-        description: '街角魔族发售',
-        isComplete: false,
-        dates: [new Date(2023, 6, 10), new Date(2023, 6, 18)], // Every Friday
-        color: 'red',
-      },
-    ];
+    const lists = [];
     return {
       incId: lists.length,
       lists,

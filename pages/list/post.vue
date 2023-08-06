@@ -12,11 +12,11 @@
         </div>
       </div>
       <div class="ContentContainer">
-        <nuxt-link v-for="index in 10" :key="index"
+        <nuxt-link v-for="index in articles" :key="index.id"
           class="pt-[26px] pb-[15px] px-6 relative rounded-md flex flex-wrap overflow-hidden transition-all hover:bg-slate-100 hover:scale-[1.02] ease-in-out"
-          :to="'/post/' + index">
+          :to="'/post/' + index.id">
           <p class="aText overflow-hidden h-[3.8rem] mr-5 text-sm font-medium line-clamp-3">
-            「ごらく部」でまったり日常を送る女子中学生4人組が異世界転生！？人気作「ゆるゆり」のスピンオフ作品！{{ testnum }}
+            {{ index.title }}
           </p>
           <div
             class="justify-self-end ml-auto w-[120px] h-[72px] md:w-[142px] md:h-[88px] rounded-md overflow-hidden relative">
@@ -33,7 +33,7 @@
             </span>
             <span class="text-xs md:text-sm font-medium tracking-wide text-[#808080]">
               <i class="fa-duotone fa-calendar-week"></i>
-              2022.01.11
+              {{ index.date }}
             </span>
           </div>
         </nuxt-link>
@@ -46,22 +46,48 @@
 
 <script>
 export default {
+  setup () {
+    const runtimeConfig = useRuntimeConfig()
+    const totalPages = ref(1)
+    const articles = ref([
+      {
+        id: 0,
+        title: '',
+        date: '',
+        cover: ''
+      }
+    ])
+    const currentPage = ref(1)
+
+    const route = useRoute()
+    let url = `${runtimeConfig.public.apiserver}/post/list?limit=10&page=${currentPage.value}`
+    if (route.query.c != null) {
+      url += `&category_id=${route.query.c}`
+    }
+
+    useFetch(async () => {
+      const response = await fetch(url)
+      const data = await response.json()
+      articles.value = data.message.articles
+      totalPages.value = data.message.total_pages
+    })
+
+    const onPageChanged = (page) => {
+      currentPage.value = page
+    }
+
+    return {
+      totalPages,
+      articles,
+      currentPage,
+      onPageChanged
+    }
+  },
   data () {
     return {
-      currentPage: 1,
-      totalPages: 10,
-      testnum: 1,
-      // 其他请求参数
-    };
-  },
-  methods: {
-    onPageChanged (page) {
-      this.currentPage = page;
-      // 更新您的 API 请求参数
-      // 例如：this.fetchData(this.currentPage);
-      this.testnum = this.testnum + 1;
-    },
-  },
+      currentPage: 1
+    }
+  }
 }
 </script>
 

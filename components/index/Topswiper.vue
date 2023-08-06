@@ -5,10 +5,11 @@
   }" :pagination="{
   type: 'progressbar',
 }" :modules="modules" class="TopSwiper">
-    <swiper-slide class="transition-opacity ease-in-out" v-for="index in 10" :key="index">Slide {{ index }}
+    <swiper-slide class="transition-opacity ease-in-out" v-for="index in json" :key="index.id">
+
       <div class="caption-wrap">
         <div class="caption">
-          「摇曳露营△」特设情报页
+          {{ index.title }}
         </div>
       </div>
     </swiper-slide>
@@ -34,8 +35,22 @@ export default {
     Swiper,
     SwiperSlide,
   },
+
   setup () {
+    const runtimeConfig = useRuntimeConfig()
+    const json = ref([{
+      "id": 0,
+      "title": "",
+      "cover": ""
+    },])
+    useFetch(async () => {
+      const response = await fetch(`${runtimeConfig.public.apiserver}/index/get_top_swiper`)
+      const data = await response.json()
+
+      json.value = data.message
+    })
     return {
+      json,
       modules: [Autoplay, Pagination, Navigation],
     };
   },

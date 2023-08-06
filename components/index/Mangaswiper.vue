@@ -14,13 +14,12 @@
     <swiper-slide v-for="index in comics" :key="index.id">
       <div class="SwiperCard hover:opacity-80 transition-opacity ease-in-out">
         <div class="rounded-tl-md absolute w-12 h-5 text-center text-white bg-black/[0.5]">
-          {{ index.date }} </div>
+          {{ trTime(index.date) }} </div>
         <div>
           <nuxt-link :to="'/comic/' + index.id">
             <nuxt-img loading="lazy" alt="manga cover" width="1055" height="1500" class="rounded-md max-w-full !h-auto"
               :src="index.cover" />
-            <nuxt-img class="rounded-md block my-1.5 mx-auto" src="https://houbunsha.co.jp/img/mv_img/label_4.gif"
-              alt="mv_img" />
+            <nuxt-img class="rounded-md block my-1.5 mx-auto" :src="getImageSrc(index.mz)" alt="mv_img" />
           </nuxt-link>
           <p>
           </p>
@@ -49,25 +48,36 @@ export default {
     Swiper,
     SwiperSlide,
   },
-  async mounted () {
-    try {
-      const response = await this.$api.get('https://sop-api.sakurakoi.top/index/get_manga_list');
-      this.comics = response.data.message;
-      console.log(response.data.message)
-    } catch (error) {
-      console.error(error);
-    }
-  },
-  data () {
-    return {
-      comics: []
-    }
-  },
   setup () {
+    const runtimeConfig = useRuntimeConfig()
+    const comics = ref([{
+      "id": 0,
+      "name": "",
+      "date": "",
+      "cover": "https://cdn.staticaly.com/gh/misaka10843/cache/main/now_printing.webp"
+    }])
+    useFetch(async () => {
+      const response = await fetch(runtimeConfig.public.apiserver + '/index/get_manga_list')
+      const data = await response.json()
+
+      comics.value = data.message
+    })
     return {
+      comics,
       modules: [Scrollbar],
     };
   },
+  methods: {
+    trTime (time) {
+      return time.slice(5).replace(/-/g, "/")
+    },
+    getImageSrc (mz) {
+      if (mz === "MangaTimeKiraraForward") {
+        return "https://houbunsha.co.jp/img/mv_img/label_6.gif"
+      }
+      return "https://houbunsha.co.jp/img/mv_img/label_4.gif"
+    }
+  }
 };
 </script>
 <style scoped>
