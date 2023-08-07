@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     apiSecret: '123',
     // Config within public will be also exposed to the client
     public: {
-      apiserver: 'https://sop-api.sakurakoi.top',
+      apiserver: 'http://127.0.0.1:8000',
       //siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://example.com',
 
       siteName: '芳文观星台',

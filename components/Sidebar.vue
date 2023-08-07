@@ -14,7 +14,7 @@
       <div class="flex items-center justify-center pt-4">
         <span class="text-center font-bold text-[#242a36]">推荐文章</span>
       </div>
-      <div class="flex items-center justify-center">
+      <div class="block">
         <SidebarcompsRecPost />
       </div>
     </div>
