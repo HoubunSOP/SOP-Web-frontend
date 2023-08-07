@@ -46,17 +46,24 @@ export default {
 
   setup () {
     const runtimeConfig = useRuntimeConfig()
+    const { $toast } = useNuxtApp()
     const json = ref([{
       "id": 0,
       "title": "",
       "cover": ""
     },])
-    useFetch(async () => {
-      const response = await fetch(`${runtimeConfig.public.apiserver}/index/get_top_swiper`)
-      const data = await response.json()
 
-      json.value = data.message
+    useFetch(async () => {
+      try {
+        const response = await fetch(`${runtimeConfig.public.apiserver}/index/get_top_swiper`)
+        const data = await response.json()
+
+        json.value = data.message
+      } catch (error) {
+        $toast.error(`/index/get_top_swiper 获取失败`)
+      }
     })
+
     return {
       json,
       modules: [Autoplay, Pagination, Navigation],

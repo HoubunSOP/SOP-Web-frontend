@@ -12,13 +12,20 @@ export default {
   },
   setup () {
     const runtimeConfig = useRuntimeConfig()
+    const { $toast } = useNuxtApp()
     const lists = ref([])
-    useFetch(async () => {
-      const response = await fetch(runtimeConfig.public.apiserver + '/index/calendar')
-      const data = await response.json()
 
-      lists.value = data.message
+    useFetch(async () => {
+      try {
+        const response = await fetch(runtimeConfig.public.apiserver + '/index/calendar')
+        const data = await response.json()
+
+        lists.value = data.message
+      } catch (error) {
+        $toast.error(`/index/calendar 获取失败`)
+      }
     })
+
     return {
       lists
     }

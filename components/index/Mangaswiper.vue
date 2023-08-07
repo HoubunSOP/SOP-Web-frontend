@@ -58,18 +58,25 @@ export default {
   },
   setup () {
     const runtimeConfig = useRuntimeConfig()
+    const { $toast } = useNuxtApp()
     const comics = ref([{
       "id": 0,
       "name": "",
       "date": "",
       "cover": "https://cdn.staticaly.com/gh/misaka10843/cache/main/now_printing.webp"
     }])
-    useFetch(async () => {
-      const response = await fetch(runtimeConfig.public.apiserver + '/index/get_manga_list')
-      const data = await response.json()
 
-      comics.value = data.message
+    useFetch(async () => {
+      try {
+        const response = await fetch(`${runtimeConfig.public.apiserver}/index/get_manga_list`)
+        const data = await response.json()
+
+        comics.value = data.message
+      } catch (error) {
+        $toast.error(`/index/get_manga_list 获取失败`)
+      }
     })
+
     return {
       comics,
       modules: [Scrollbar],

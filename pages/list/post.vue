@@ -68,6 +68,7 @@ export default {
   setup () {
     const runtimeConfig = useRuntimeConfig()
     const totalPages = ref(1)
+    const { $toast } = useNuxtApp()
     const articles = ref([
       {
         id: 0,
@@ -85,10 +86,14 @@ export default {
     }
 
     useFetch(async () => {
-      const response = await fetch(url)
-      const data = await response.json()
-      articles.value = data.message.articles
-      totalPages.value = data.message.total_pages
+      try {
+        const response = await fetch(url)
+        const data = await response.json()
+        articles.value = data.message.articles
+        totalPages.value = data.message.total_pages
+      } catch (error) {
+        $toast.error(`/post/list?limit=10&page=${currentPage.value} 获取失败`)
+      }
     })
 
     const onPageChanged = (page) => {

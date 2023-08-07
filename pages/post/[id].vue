@@ -35,6 +35,7 @@ export default {
   scrollToTop: true,
   setup () {
     const runtimeConfig = useRuntimeConfig()
+    const { $toast } = useNuxtApp()
     const post = ref({
       "post_id": 0,
       "post_name": "",
@@ -46,10 +47,13 @@ export default {
     const route = useRoute()
 
     useFetch(async () => {
-      const response = await fetch(`${runtimeConfig.public.apiserver}/post/${route.params.id}`)
-      const data = await response.json()
-
-      post.value = data.message
+      try {
+        const response = await fetch(`${runtimeConfig.public.apiserver}/post/${route.params.id}`)
+        const data = await response.json()
+        post.value = data.message
+      } catch (error) {
+        $toast.error(`/post/${route.params.id} 获取失败`)
+      }
     })
 
 

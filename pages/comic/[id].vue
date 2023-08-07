@@ -75,8 +75,9 @@
 <script>
 export default {
   scrollToTop: true,
-  async setup () {
+  setup () {
     const runtimeConfig = useRuntimeConfig();
+    const { $toast } = useNuxtApp()
     const comic = ref({
       comic_id: 0,
       comic_name: "暂无",
@@ -88,12 +89,16 @@ export default {
       comic_author: "未知"
     });
     const route = useRoute();
+    useFetch(async () => {
+      try {
+        const response = await fetch(`${runtimeConfig.public.apiserver}/comic/${route.params.id}`);
+        const data = await response.json();
 
-    const response = await fetch(`${runtimeConfig.public.apiserver}/comic/${route.params.id}`);
-    const data = await response.json();
-
-    comic.value = data.message;
-
+        comic.value = data.message;
+      } catch (error) {
+        $toast.error(`/comic/${route.params.id} 获取失败`)
+      }
+    })
     return {
       comic
     };

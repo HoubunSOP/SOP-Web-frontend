@@ -57,6 +57,7 @@
 export default {
   setup () {
     const runtimeConfig = useRuntimeConfig()
+    const { $toast } = useNuxtApp()
     const totalPages = ref(1)
     const articles = ref([{
       "id": 0,
@@ -67,17 +68,22 @@ export default {
       "category_name": ""
     }])
     const currentPage = ref(1)
-    const { data: count } = useFetch(async () => {
-      const response = await fetch(runtimeConfig.public.apiserver + '/post/list?limit=10&page=' + currentPage.value)
-      const data = await response.json()
-      articles.value = data.message.articles
-      totalPages.value = data.message.total_pages
+
+    useFetch(async () => {
+      try {
+        const response = await fetch(`${runtimeConfig.public.apiserver}/post/list?limit=10&page=${currentPage.value}`)
+        const data = await response.json()
+        articles.value = data.message.articles
+        totalPages.value = data.message.total_pages
+      } catch (error) {
+        $toast.error(`/post/list?limit=10&page=${currentPage.value} 获取失败`)
+      }
     })
+
     return {
       totalPages,
       articles,
       currentPage,
-      count
     }
   },
   data () {

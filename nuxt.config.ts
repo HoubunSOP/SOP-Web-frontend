@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   plugins: [
     { src: '~/plugins/scroll.client.ts', ssr: false },
     { src: '~/plugins/medium-zoom.client.ts', ssr: false },
+    { src: '~/plugins/toast.client.ts', ssr: false },
   ],
   runtimeConfig: {
     // Private config that is only available on the server
@@ -31,5 +32,9 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  build: {
+    // vue-toastification - old commonjs module
+    transpile: ['vue-toastification'],
   },
 })
