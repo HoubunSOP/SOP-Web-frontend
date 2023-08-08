@@ -6,12 +6,12 @@
           <div class="mb-5 text-xs font-medium text-[#ababac] overflow-hidden">
             <span v-for="name in post.categories" :key="name">
               <i class="fa-regular fa-folder-open"></i>
-              <span v-if="post.post_id != 0">{{ name }}</span>
+              <span class="ml-1" v-if="post.post_id != 0">{{ name }}</span>
               <div v-else class="h-2.5 bg-gray-200 rounded-full w-20 animate-pulse inline-block ml-2"></div>
             </span>
             <span class="pl-2">
               <i class="fa-regular fa-calendar"></i>
-              <span v-if="post.post_id != 0">{{ post.post_date }}</span>
+              <span class="ml-1" v-if="post.post_id != 0">{{ post.post_date }}</span>
               <div v-else class="h-2.5 bg-gray-200 rounded-full w-20 animate-pulse inline-block ml-2"></div>
             </span>
           </div>
@@ -19,9 +19,11 @@
             <span v-if="post.post_id != 0">{{ post.post_name }}</span>
             <div v-else class="h-5 bg-gray-200 rounded-full w-40 animate-pulse inline-block"></div>
           </h1>
-          <div class="mb-6 text-center bg-[#F5F5F5] max-w-[100%] h-40 md:h-60 rounded-md  top-0 left-0 object-cover"
+          <div
+            class="mb-6 text-center bg-[#F5F5F5] max-w-[100%] h-40 md:h-60 rounded-md  top-0 left-0 object-cover inline"
             v-if="post.post_cover">
-            <nuxt-img v-if="post.post_id != 0" loading="lazy" :src="post.post_cover" alt="" />
+            <nuxt-img class="w-full object-cover rounded-xl" v-if="post.post_id != 0" loading="lazy"
+              :src="post.post_cover" alt="" />
             <div v-else class="flex items-center justify-center w-full h-40 md:h-60 bg-gray-300 rounded animate-pulse">
               <svg class="w-10 h-10 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor" viewBox="0 0 20 18">
@@ -94,6 +96,10 @@ export default {
       try {
         const response = await fetch(`${runtimeConfig.public.apiserver}/post/${route.params.id}`)
         const data = await response.json()
+        if (data.status === "error") {
+          $toast.error(`/post/${route.params.id} 获取失败:${data.message}`)
+          await navigateTo('/')
+        }
         post.value = data.message
       } catch (error) {
         $toast.error(`/post/${route.params.id} 获取失败`)

@@ -69,12 +69,18 @@
 
 <script>
 export default {
-  setup () {
+  setup (_, context) {
     const num = ref(0)
-    const loading = ref(true)
+    const loading = ref(false)
     const isMounted = ref(false)
     const willclose = ref(false)
-
+    const isLoaded = useCookie('isLoaded')
+    if (isLoaded.value === null) {
+      isLoaded.value = false;
+    }
+    if (!isLoaded.value) {
+      loading.value = true
+    }
     const increaseNum = () => {
       if (num.value < 99) {
         if (isMounted.value) {
@@ -90,6 +96,7 @@ export default {
         }, 2000)
         setTimeout(() => {
           loading.value = false
+          isLoaded.value = true
           num.value = 100
         }, 3000)
       }
@@ -105,10 +112,19 @@ export default {
       willclose
     }
   },
+  mounted () {
+    // 检查标记，如果不存在，则将其设置为 true 并显示组件
+    const hasShownComponent = localStorage.getItem('hasShownComponent');
+    if (!hasShownComponent) {
+      localStorage.setItem('hasShownComponent', 'true');
+      this.showComponent = true;
+    }
+  },
   data () {
     return {
       isMobileMenuOpen: false,
       isProfileOpen: true,
+      showComponent: false,
       navPages: [
         {
           name: "文章列表",

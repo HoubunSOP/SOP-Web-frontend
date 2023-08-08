@@ -145,7 +145,10 @@ export default {
       try {
         const response = await fetch(`${runtimeConfig.public.apiserver}/comic/${route.params.id}`);
         const data = await response.json();
-
+        if (data.status === "error") {
+          $toast.error(`/post/${route.params.id} 获取失败:${data.message}`)
+          await navigateTo('/')
+        }
         comic.value = data.message;
       } catch (error) {
         $toast.error(`/comic/${route.params.id} 获取失败`)

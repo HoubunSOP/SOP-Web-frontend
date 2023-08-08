@@ -9,12 +9,20 @@ export default defineNuxtConfig({
     { src: '~/plugins/medium-zoom.client.ts', ssr: false },
     { src: '~/plugins/toast.client.ts', ssr: false },
   ],
+
+  app: {
+    //pageTransition: { name: 'page', mode: 'out-in' },
+    //layoutTransition: { name: 'layout', mode: 'out-in' },
+  },
   runtimeConfig: {
     // Private config that is only available on the server
     apiSecret: '123',
     // Config within public will be also exposed to the client
     public: {
-      apiserver: 'http://127.0.0.1:8000',
+      apiserver:
+        process.env.NODE_ENV === 'development'
+          ? 'http://localhost:8000'
+          : 'https://sop-api.sakurakoi.top',
       //siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://example.com',
 
       siteName: '芳文观星台',

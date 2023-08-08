@@ -13,20 +13,27 @@
       </div>
       <div class="pt-2">
         <ul class="list-none">
-          <li>
-            <a class="mb-0 flex rounded-full transition-all ease-in-out text-zinc-950 py-2 px-3 items-center justify-between hover:bg-[#f5f5f5]"
-              href="/">
+          <li v-if="category[0].id != 0" v-for="index in category" :key="index.id">
+            <nuxt-link
+              class="mb-0 flex rounded-full transition-all ease-in-out text-zinc-950 py-2 px-3 items-center justify-between hover:bg-[#f5f5f5]"
+              :to="`/list/post?c=` + index.id">
               <span class="level-start">
                 <span class="flex items-center justify-between">
-                  アニメ
+                  {{ index.name }}
                 </span>
               </span>
               <span class="level-end">
                 <span class="bg-[#f5f5f5] flex items-center justify-between text-xs h-8 px-3">
-                  1
+                  {{ index.article_count }}
                 </span>
               </span>
-            </a>
+            </nuxt-link>
+          </li>
+          <li v-else v-for="index in 5" :key="index">
+            <div
+              class="mb-0 flex rounded-full transition-all ease-in-out py-2 px-3 items-center justify-between hover:bg-[#f5f5f5]">
+              <div class="h-5 bg-gray-200 rounded-full w-full animate-pulse"></div>
+            </div>
           </li>
         </ul>
       </div>
@@ -35,7 +42,30 @@
   </mainpage>
 </template>
 <script>
-export default {}
+export default {
+  setup () {
+    const runtimeConfig = useRuntimeConfig();
+    const { $toast } = useNuxtApp()
+    const category = ref([{
+      id: 0,
+      name: "未分类",
+      article_count: "0",
+    }]);
+    useFetch(async () => {
+      try {
+        const response = await fetch(`${runtimeConfig.public.apiserver}/category/list?type=文章`);
+        const data = await response.json();
+
+        category.value = data.message;
+      } catch (error) {
+        $toast.error(`/category/list?type=文章 获取失败`)
+      }
+    })
+    return {
+      category
+    };
+  }
+}
 </script>
 
 <style></style>

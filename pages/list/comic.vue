@@ -73,19 +73,23 @@ export default {
     const currentPage = ref(1)
 
     const route = useRoute()
-    let url = `${runtimeConfig.public.apiserver}/comic/list?limit=10&page=${currentPage.value}`
+    let url = `/comic/list?limit=10&page=${currentPage.value}`
     if (route.query.c != null) {
       url += `&category_id=${route.query.c}`
     }
 
     useFetch(async () => {
       try {
-        const response = await fetch(url)
+        const response = await fetch(runtimeConfig.public.apiserver + url)
         const data = await response.json()
         comics.value = data.message.comics
+        if (data.status === "error") {
+          $toast.error(`${url} 获取失败:${data.message}`)
+          await navigateTo('/')
+        }
         totalPages.value = data.message.total_pages
       } catch (error) {
-        $toast.error(`/comic/list?limit=10&page=${currentPage.value} 获取失败`)
+        $toast.error(`${url} 获取失败`)
       }
     })
     const onPageChanged = (page) => {
