@@ -24,7 +24,7 @@ useHead({
     },
     {
       rel: 'stylesheet',
-      href: 'https://cdn.jsdelivr.net/npm/@waline/client@2/dist/waline.min.css'
+      href: 'https://fastly.jsdelivr.net/npm/@waline/client@2/dist/waline.min.css'
     }
   ],
   script: [

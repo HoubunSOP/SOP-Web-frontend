@@ -16,7 +16,7 @@
           <li v-if="category[0].id != 0" v-for="index in category" :key="index.id">
             <nuxt-link
               class="mb-0 flex rounded-full transition-all ease-in-out text-zinc-950 py-2 px-3 items-center justify-between hover:bg-[#f5f5f5]"
-              :to="`/list/post?c=` + index.id">
+              :to="`/list/comic?c=` + index.id">
               <span class="level-start">
                 <span class="flex items-center justify-between">
                   {{ index.name }}

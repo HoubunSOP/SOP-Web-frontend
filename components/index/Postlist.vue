@@ -14,8 +14,7 @@
       <div
         class="justify-self-end ml-auto w-[120px] h-[72px] md:w-[142px] md:h-[88px] rounded-md overflow-hidden relative">
         <div class="h-full relative">
-          <nuxt-img loading="lazy" class="w-[100%] h-[100%] absolute top-0 left-0 object-cover"
-            src="https://media.comicspace.jp/wp-content/uploads/2022/01/775a9b3f8aa99181e60620106c09bd65.jpeg"
+          <nuxt-img loading="lazy" class="w-[100%] h-[100%] absolute top-0 left-0 object-cover" :src="index.cover"
             alt="post cover" />
         </div>
       </div>
