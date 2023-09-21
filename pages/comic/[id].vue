@@ -13,7 +13,7 @@
             <p class="mb-2.5 m-0 text-sm tracking-wide">
               <a class="inline-block h-7 leading-7 py-0 px-3 bg-[#F2F2F2] rounded-2xl text-[#606060] text-xs mr-2">
                 <i class="fa-regular fa-user"></i>
-                <span v-if="comic.comic_id != 0">{{ author }}</span>
+                <span v-if="comic.comic_id != 0">{{ comic.comic_author }}</span>
                 <div v-else class="h-2.5 bg-gray-200 rounded-full w-20 animate-pulse inline-block"></div>
               </a>
               <a class="inline-block h-7 leading-7 py-0 px-3 bg-[#F2F2F2] rounded-2xl text-[#606060] text-xs">

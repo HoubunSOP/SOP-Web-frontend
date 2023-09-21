@@ -44,8 +44,9 @@
             </figure>
           </nuxt-link>
           <p
-            class="text-center whitespace-nowrap text-ellipsis text-[10px] h-[15px] font-normal overflow-hidden"
+            class="text-center whitespace-nowrap text-ellipsis text-[15px] h-[25px] font-normal overflow-hidden"
           >
+            <span v-if="index.auto == 1" class="text-[#ef4444]">*</span>
             {{ index.name }}
           </p>
           <p
@@ -111,6 +112,7 @@ export default {
         name: '',
         date: '',
         cover: '',
+        auto: 0,
       },
     ])
     const currentPage = ref(1)
