@@ -1,12 +1,10 @@
 <p align="center">
-    <img src="https://cdn.staticaly.com/gh/HoubunSOP/SOP-Web-frontend/main/public/logo black.png" width="200" height="auto" alt="houbunsop">
+    <img src="https://cdn.statically.io/gh/HoubunSOP/SOP-Web-frontend/main/public/logo black.png" width="200" height="auto" alt="houbunsop">
 </p>
 
 <div align="center">
 
-# 🔭芳文观星台官网前端🌟
-
-
+# 🔭 芳文观星台官网前端 🌟
 
 网址：正式(暂未上线) [测试](https://sop.sakurakoi.top)
 
@@ -46,7 +44,7 @@ font-awesome
 
 ## 如何在本地运行
 
-请先保证您安装了nodejs，然后clone本仓库后在根目录运行：
+请先保证您安装了 nodejs，然后 clone 本仓库后在根目录运行：
 
 ```bash
 # npm
@@ -102,7 +100,6 @@ pnpm run preview
 yarn preview
 ```
 
-
 ## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FHoubunSOP%2FSOP-Web-frontend.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FHoubunSOP%2FSOP-Web-frontend?ref=badge_large)
 
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FHoubunSOP%2FSOP-Web-frontend.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FHoubunSOP%2FSOP-Web-frontend?ref=badge_large)

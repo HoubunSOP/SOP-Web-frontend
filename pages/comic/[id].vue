@@ -134,7 +134,7 @@ export default {
       comic_id: 0,
       comic_name: "暂无",
       comic_date: "未知",
-      comic_cover: "https://cdn.staticaly.com/gh/misaka10843/cache/main/now_printing.webp",
+      comic_cover: "https://cdn.statically.io/gh/misaka10843/cache/main/now_printing.webp",
       categories: ["未分类"],
       comic_intro: "无",
       comic_magazine: "未知",

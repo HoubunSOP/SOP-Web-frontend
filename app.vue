@@ -10,37 +10,38 @@
 <script setup>
 useHead({
   htmlAttrs: {
-    lang: 'zh-CN'
+    lang: 'zh-CN',
   },
   link: [
     {
       rel: 'icon',
       type: 'image/png',
-      href: '/favicon.ico'
+      href: '/favicon.ico',
     },
     {
       rel: 'stylesheet',
-      href: 'https://cdn.staticaly.com/gh/HoubunSOP/font-awesome-6/main/css/all.min.css'
+      href: 'https://cdn.statically.io/gh/HoubunSOP/font-awesome-6/main/css/all.min.css',
     },
     {
       rel: 'stylesheet',
-      href: 'https://fastly.jsdelivr.net/npm/@waline/client@2/dist/waline.min.css'
-    }
+      href: 'https://fastly.jsdelivr.net/npm/@waline/client@2/dist/waline.min.css',
+    },
   ],
   script: [
     {
       src: 'https://fastly.jsdelivr.net/npm/@waline/client@2/dist/waline.js',
       type: 'text/javascript',
       body: true,
-      defer: true
-    }
-  ]
+      defer: true,
+    },
+  ],
 })
 </script>
 <style scoped>
 @font-face {
   font-family: 'UF Steleto';
-  src: url('https://cdn.staticaly.com/gh/HoubunSOP/uchugo-fonts/master/dist/UFSteleto.woff') format('woff');
+  src: url('https://cdn.statically.io/gh/HoubunSOP/uchugo-fonts/master/dist/UFSteleto.woff')
+    format('woff');
 }
 
 .load-rogress {
