@@ -27,12 +27,12 @@ export default defineNuxtConfig({
       apiserver:
         process.env.NODE_ENV === 'development'
           ? 'http://localhost:8000'
-          : 'https://api.fwgxt.top',
+          : 'https://api.fwgxt.top/api',
       //siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://example.com',
 
       siteName: '芳文观星台',
 
-      siteDescription: 'Welcome to my awesome site!',
+      siteDescription: '专注于芳文相关内容!',
 
       language: 'zh-CN', // prefer more explicit language codes like `en-AU` over `en`
     },
