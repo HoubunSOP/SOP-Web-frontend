@@ -1,22 +1,53 @@
 <template>
-  <swiper :slidesPerView="1" :spaceBetween="30" :loop="true" :slides-per-view="'auto'" :centeredSlides="true" :autoplay="{
-    delay: 2500,
-    disableOnInteraction: false,
-  }" :pagination="{
-  type: 'progressbar',
-}" :modules="modules" class="TopSwiper">
-    <swiper-slide class="transition-opacity ease-in-out" v-for="index in json" :key="index.id">
-
+  <swiper
+    :slidesPerView="1"
+    :spaceBetween="30"
+    :loop="true"
+    :slides-per-view="'auto'"
+    :centeredSlides="true"
+    :autoplay="{
+      delay: 2500,
+      disableOnInteraction: false,
+    }"
+    :pagination="{
+      type: 'progressbar',
+    }"
+    :modules="modules"
+    class="TopSwiper"
+  >
+    <swiper-slide
+      class="transition-opacity ease-in-out"
+      v-for="index in json"
+      :key="index.id"
+    >
+      <img
+        v-if="index.id != 0"
+        :src="index.cover"
+        style="
+          width: 100%;
+          border-radius: 9px 9px 9px 9px !important;
+          height: 100%;
+        "
+      />
       <div v-if="index.id != 0" class="caption-wrap">
         <div class="caption">
-          {{ index.title }}
+          <a :href="'/post/' + index.id">{{ index.title }}</a>
         </div>
       </div>
-      <div v-else class="flex items-center justify-center w-full h-full animate-pulse bg-gray-300 rounded">
-        <svg class="w-10 h-10 text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-          viewBox="0 0 20 18">
+      <div
+        v-else
+        class="flex items-center justify-center w-full h-full animate-pulse bg-gray-300 rounded"
+      >
+        <svg
+          class="w-10 h-10 text-gray-200"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 18"
+        >
           <path
-            d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z" />
+            d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z"
+          />
         </svg>
       </div>
     </swiper-slide>
@@ -25,17 +56,16 @@
 
 <script>
 // Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Swiper, SwiperSlide } from 'swiper/vue'
 
 // Import Swiper styles
-import 'swiper/css';
+import 'swiper/css'
 
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 
 export default {
   components: {
@@ -43,18 +73,22 @@ export default {
     SwiperSlide,
   },
 
-  setup () {
+  setup() {
     const runtimeConfig = useRuntimeConfig()
     const { $toast } = useNuxtApp()
-    const json = ref([{
-      "id": 0,
-      "title": "",
-      "cover": ""
-    },])
+    const json = ref([
+      {
+        id: 0,
+        title: '',
+        cover: '',
+      },
+    ])
 
     useFetch(async () => {
       try {
-        const response = await fetch(`${runtimeConfig.public.apiserver}/index/get_top_swiper`)
+        const response = await fetch(
+          `${runtimeConfig.public.apiserver}/index/get_top_swiper`
+        )
         const data = await response.json()
 
         json.value = data.message
@@ -66,9 +100,9 @@ export default {
     return {
       json,
       modules: [Autoplay, Pagination, Navigation],
-    };
+    }
   },
-};
+}
 </script>
 
 <style>
@@ -81,8 +115,6 @@ export default {
 .swiper-wrapper {
   width: 240px;
 }
-
-
 
 .TopSwiper .swiper-slide {
   text-align: center;
@@ -106,7 +138,7 @@ export default {
   object-fit: cover;
 }
 
-.TopSwiper .caption-wrap>.caption {
+.TopSwiper .caption-wrap > .caption {
   padding: 5px 10px;
   word-wrap: break-word;
   line-height: 15px;
@@ -138,7 +170,7 @@ export default {
 }
 
 .TopSwiper::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   bottom: 0;
@@ -148,7 +180,7 @@ export default {
 }
 
 .TopSwiper::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   bottom: 0;
