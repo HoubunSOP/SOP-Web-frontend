@@ -67,10 +67,12 @@
 #post-content .bgline {
 	background: url(/img/bgline.png) repeat left bottom;
 	background-size: 6px 24px;
+	color: #1b1b1b;
 }
 
 #post-content .highlight {
 	background-color: #559fff;
+	color: #fff;
 }
 
 #post-content iframe {
