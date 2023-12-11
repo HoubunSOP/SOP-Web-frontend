@@ -91,8 +91,7 @@ export default {
         id: 0,
         name: '',
         date: '',
-        cover:
-          'https://cdn.statically.io/gh/misaka10843/cache/main/now_printing.webp',
+        cover: '/img/now_printing.webp',
       },
     ])
 
@@ -120,9 +119,9 @@ export default {
     },
     getImageSrc(mz) {
       if (mz === 'MangaTimeKiraraForward') {
-        return 'https://houbunsha.co.jp/img/mv_img/label_6.gif'
+        return '/img/label_6.webp'
       }
-      return 'https://houbunsha.co.jp/img/mv_img/label_4.gif'
+      return '/img/label_4.webp'
     },
   },
 }

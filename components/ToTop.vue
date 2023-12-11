@@ -2,8 +2,8 @@
   <p class="backToTop hidden md:block">
     <a class="scroll-to-top" @click="scrollToTop" v-show="showButton">
       <picture>
-        <source type="image/webp" srcset="https://hoshitele-anime.com/dist/img/common/btn_backToTop.webp">
-        <img src="https://hoshitele-anime.com/dist/img/common/btn_backToTop.png" alt="PAGE TOP" width="60px" />
+        <source type="image/webp" srcset="/img/btn_backToTop.webp" />
+        <img src="/img/btn_backToTop.webp" alt="PAGE TOP" width="60px" />
       </picture>
     </a>
   </p>
@@ -11,31 +11,31 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       scrollTop: 0,
-      showButton: false
-    };
+      showButton: false,
+    }
   },
-  mounted () {
-    window.addEventListener("scroll", this.handleScroll);
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll)
   },
-  beforeDestroy () {
-    window.removeEventListener("scroll", this.handleScroll);
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
-    handleScroll () {
-      this.scrollTop = window.scrollY;
-      this.showButton = this.scrollTop > 200;
+    handleScroll() {
+      this.scrollTop = window.scrollY
+      this.showButton = this.scrollTop > 200
     },
-    scrollToTop () {
+    scrollToTop() {
       window.scrollTo({
         top: 0,
-        behavior: "smooth"
-      });
-    }
-  }
-};
+        behavior: 'smooth',
+      })
+    },
+  },
+}
 </script>
 
 <style scoped>
@@ -43,7 +43,6 @@ export default {
   right: 20px;
   bottom: 20px;
   position: fixed;
-
 }
 
 .scroll-to-top {
@@ -53,11 +52,11 @@ export default {
 }
 
 .backToTop a::before {
-  background-image: url(https://hoshitele-anime.com/assets/rocket_anim.webp);
+  background-image: url(/img/rocket_anim.webp);
 }
 
 .backToTop a::before {
-  content: "";
+  content: '';
   width: 60px;
   height: 260px;
   position: absolute;
@@ -73,8 +72,8 @@ export default {
 }
 
 .backToTop a:hover {
-  -webkit-animation: purupuru .1s infinite;
-  animation: purupuru .1s infinite;
+  -webkit-animation: purupuru 0.1s infinite;
+  animation: purupuru 0.1s infinite;
 }
 
 @keyframes purupuru {
