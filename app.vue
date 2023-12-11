@@ -20,7 +20,11 @@ useHead({
     },
     {
       rel: 'stylesheet',
-      href: 'https://cdn.statically.io/gh/HoubunSOP/font-awesome-6/main/css/all.min.css',
+      href: '/font/font-awesome/all.min.css',
+    },
+    {
+      rel: 'stylesheet',
+      href: '/font/uchugo/style.css',
     },
     {
       rel: 'stylesheet',
@@ -38,12 +42,6 @@ useHead({
 })
 </script>
 <style scoped>
-@font-face {
-  font-family: 'UF Steleto';
-  src: url('https://cdn.statically.io/gh/HoubunSOP/uchugo-fonts/master/dist/UFSteleto.woff')
-    format('woff');
-}
-
 .load-rogress {
   background-color: #098bf5;
   box-shadow: 0 0 10px #098bf5, 0 0 5px #098bf5;

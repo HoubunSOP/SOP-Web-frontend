@@ -121,8 +121,7 @@ export default {
       post_id: 0,
       post_name: '',
       post_date: '',
-      post_cover:
-        'https://cdn.statically.io/gh/misaka10843/cache/main/now_printing.webp',
+      post_cover: '/img/now_printing.webp',
       categories: ['未分类'],
       post_content: '',
     })
