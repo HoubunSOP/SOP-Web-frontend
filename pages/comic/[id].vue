@@ -128,6 +128,7 @@
 export default {
   scrollToTop: true,
   setup () {
+    useSeoMeta({title:"loading"})
     const runtimeConfig = useRuntimeConfig();
     const { $toast } = useNuxtApp()
     const comic = ref({
@@ -150,6 +151,7 @@ export default {
           await navigateTo('/')
         }
         comic.value = data.message;
+        useSeoMeta({title:comic.value.comic_name})
       } catch (error) {
         $toast.error(`/comic/${route.params.id} 获取失败`)
       }

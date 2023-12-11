@@ -115,6 +115,7 @@
 export default {
   scrollToTop: true,
   setup() {
+    useSeoMeta({ title: 'loading' })
     const runtimeConfig = useRuntimeConfig()
     const { $toast } = useNuxtApp()
     const post = ref({
@@ -138,6 +139,7 @@ export default {
           await navigateTo('/')
         }
         post.value = data.message
+        useSeoMeta({ title: post.value.post_name })
       } catch (error) {
         $toast.error(`/post/${route.params.id} 获取失败`)
       }
