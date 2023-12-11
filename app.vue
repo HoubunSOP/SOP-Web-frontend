@@ -44,6 +44,8 @@ useHead({
 <style scoped>
 .load-rogress {
   background-color: #098bf5;
-  box-shadow: 0 0 10px #098bf5, 0 0 5px #098bf5;
+  box-shadow:
+    0 0 10px #098bf5,
+    0 0 5px #098bf5;
 }
 </style>

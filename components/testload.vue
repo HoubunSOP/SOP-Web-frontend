@@ -1,6 +1,8 @@
 <template>
-  <div class="fixed inset-0 flex flex-col justify-center items-center z-[9999] bg-black/50 load-screen"
-    :class="{ 'willclose': willclose == true }">
+  <div
+    class="fixed inset-0 flex flex-col justify-center items-center z-[9999] bg-black/50 load-screen"
+    :class="{ willclose: willclose == true }"
+  >
     <div class="text-center">
       <h1 class="text-4xl md:text-9xl font-bold text-white">
         <span v-if="loadnum >= 13">B</span>
@@ -11,8 +13,12 @@
         <span v-if="loadnum >= 73">N</span>
         <span v-if="loadnum >= 85">O</span>
       </h1>
-      <p class="text-white text-lg md:text-2xl font-bold load-text" :class="{ 'loaded': loadnum > 99 }"
-        v-if="loadnum >= 95">芳文观星台
+      <p
+        class="text-white text-lg md:text-2xl font-bold load-text"
+        :class="{ loaded: loadnum > 99 }"
+        v-if="loadnum >= 95"
+      >
+        芳文观星台
       </p>
     </div>
   </div>
@@ -21,8 +27,8 @@
 export default {
   props: {
     loadnum: Number,
-    willclose: Boolean
-  }
+    willclose: Boolean,
+  },
 }
 </script>
 <style scoped>

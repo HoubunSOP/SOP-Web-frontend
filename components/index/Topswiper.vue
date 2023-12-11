@@ -87,7 +87,7 @@ export default {
     useFetch(async () => {
       try {
         const response = await fetch(
-          `${runtimeConfig.public.apiserver}/index/get_top_swiper`
+          `${runtimeConfig.public.apiserver}/index/get_top_swiper`,
         )
         const data = await response.json()
 

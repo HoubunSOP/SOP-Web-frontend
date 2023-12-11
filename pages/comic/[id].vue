@@ -33,7 +33,7 @@
             <p class="mt-2 text-xs font-medium">
               发售日：
               <span v-if="comic.comic_id != 0">{{ comic.comic_date }}</span>
-            <div v-else class="h-2.5 bg-gray-200 rounded-full w-20 animate-pulse inline-block"></div>
+              <div v-else class="h-2.5 bg-gray-200 rounded-full w-20 animate-pulse inline-block"></div>
             </p>
             <div class="border-t-2 border-solid border-gray-300 py-6 mt-6">
               <h2 class="mb-3.5">

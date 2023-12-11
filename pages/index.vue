@@ -10,7 +10,6 @@
 </template>
 
 <script setup>
-
 useSeoMeta({
   title: '芳文观星台',
   description: '专注于芳文相关内容!',
@@ -21,10 +20,8 @@ useSeoMeta({
   twitterTitle: '[twitter:title]',
   twitterDescription: '专注于芳文相关内容!',
   twitterImage: '[twitter:image]',
-  twitterCard: 'summary'
+  twitterCard: 'summary',
 })
-
-
 </script>
 
 <style></style>

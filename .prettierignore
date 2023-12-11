@@ -1,0 +1,5 @@
+build
+.history
+.nuxt
+.output
+node_modules

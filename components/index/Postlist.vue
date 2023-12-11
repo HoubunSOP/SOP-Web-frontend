@@ -110,7 +110,7 @@ export default {
     useFetch(async () => {
       try {
         const response = await fetch(
-          `${runtimeConfig.public.apiserver}/post/list?limit=10&page=${currentPage.value}`
+          `${runtimeConfig.public.apiserver}/post/list?limit=10&page=${currentPage.value}`,
         )
         const data = await response.json()
         articles.value = data.message.articles

@@ -14,9 +14,9 @@
             </span>
             <span class="pl-2">
               <i class="fa-regular fa-calendar"></i>
-              <span class="ml-1" v-if="post.post_id != 0">{{
-                post.post_date
-              }}</span>
+              <span class="ml-1" v-if="post.post_id != 0">
+                {{ post.post_date }}
+              </span>
               <div
                 v-else
                 class="h-2.5 bg-gray-200 rounded-full w-20 animate-pulse inline-block ml-2"
@@ -130,7 +130,7 @@ export default {
     useFetch(async () => {
       try {
         const response = await fetch(
-          `${runtimeConfig.public.apiserver}/post/${route.params.id}`
+          `${runtimeConfig.public.apiserver}/post/${route.params.id}`,
         )
         const data = await response.json()
         if (data.status === 'error') {

@@ -98,7 +98,7 @@ export default {
     useFetch(async () => {
       try {
         const response = await fetch(
-          `${runtimeConfig.public.apiserver}/index/get_manga_list`
+          `${runtimeConfig.public.apiserver}/index/get_manga_list`,
         )
         const data = await response.json()
 

@@ -10,20 +10,29 @@
           <h3 class="text-gray-100 font-bold mb-2">相关页面</h3>
           <ul>
             <li>
-              <a href="https://web6or1pcx.feishu.cn/docx/HarndmlnwoFDMqxjxCzcW86anRc?from=from_copylink" target="_blank"
-                class="text-gray-400 hover:text-white">
+              <a
+                href="https://web6or1pcx.feishu.cn/docx/HarndmlnwoFDMqxjxCzcW86anRc?from=from_copylink"
+                target="_blank"
+                class="text-gray-400 hover:text-white"
+              >
                 隐私协议
               </a>
             </li>
             <li>
-              <a href="https://web6or1pcx.feishu.cn/docx/XiAHddZ9Eopchbxw1OAcVsEOnve?from=from_copylink" target="_blank"
-                class="text-gray-400 hover:text-white">
+              <a
+                href="https://web6or1pcx.feishu.cn/docx/XiAHddZ9Eopchbxw1OAcVsEOnve?from=from_copylink"
+                target="_blank"
+                class="text-gray-400 hover:text-white"
+              >
                 网站待办看板
               </a>
             </li>
             <li>
-              <a href="https://web6or1pcx.feishu.cn/docx/LqA6d7c2JoTSfKxHGADcimXhncz?from=from_copylink" target="_blank"
-                class="text-gray-400 hover:text-white">
+              <a
+                href="https://web6or1pcx.feishu.cn/docx/LqA6d7c2JoTSfKxHGADcimXhncz?from=from_copylink"
+                target="_blank"
+                class="text-gray-400 hover:text-white"
+              >
                 免责说明
               </a>
             </li>
@@ -33,19 +42,19 @@
           <h3 class="text-gray-100 font-bold mb-2">联系我们</h3>
           <p class="text-gray-400 hover:text-white">
             <a target="_blank" href="https://space.bilibili.com/1585955812">
-              <i class="fa-brands fa-bilibili" style="color: #0084ff;"></i>
+              <i class="fa-brands fa-bilibili" style="color: #0084ff"></i>
               bilibili
             </a>
           </p>
           <p class="text-gray-400">
             <a target="_blank">
-              <i class="fa-brands fa-qq" style="color: #b62b2b;"></i>
+              <i class="fa-brands fa-qq" style="color: #b62b2b"></i>
               水群2群：729479808
             </a>
           </p>
           <p class="text-gray-400">
             <a target="_blank">
-              <i class="fa-brands fa-qq" style="color: #b62b2b;"></i>
+              <i class="fa-brands fa-qq" style="color: #b62b2b"></i>
               组群：478991875
             </a>
           </p>
@@ -54,7 +63,14 @@
       <div class="mt-4 border-t border-gray-700 pt-4">
         <div class="flex items-center justify-between">
           <a class="mGeneralLink" href="/">
-            <nuxt-img loading="lazy" alt="comicspace" class="aImage" height="28" src="/logo.svg" width="128" />
+            <nuxt-img
+              loading="lazy"
+              alt="comicspace"
+              class="aImage"
+              height="28"
+              src="/logo.svg"
+              width="128"
+            />
           </a>
           <p class="text-[#808080] text-sm">©芳文观星台</p>
         </div>
@@ -63,9 +79,7 @@
   </footer>
 </template>
 <script>
-export default {
-
-}
+export default {}
 </script>
 
 <style></style>

@@ -10,14 +10,16 @@ export default {
     visibility: { type: String, default: 'focus' },
     hideIndicators: Boolean,
   },
-  setup () {
+  setup() {
     const runtimeConfig = useRuntimeConfig()
     const { $toast } = useNuxtApp()
     const lists = ref([])
 
     useFetch(async () => {
       try {
-        const response = await fetch(runtimeConfig.public.apiserver + '/index/calendar')
+        const response = await fetch(
+          runtimeConfig.public.apiserver + '/index/calendar',
+        )
         const data = await response.json()
 
         lists.value = data.message
@@ -27,30 +29,30 @@ export default {
     })
 
     return {
-      lists
+      lists,
     }
   },
-  data () {
-    const lists = [];
+  data() {
+    const lists = []
     return {
       incId: lists.length,
       lists,
-    };
+    }
   },
   computed: {
-    attributes () {
-      const currentDate = new Date();
+    attributes() {
+      const currentDate = new Date()
       const additionalAttribute = {
         highlight: true,
         dates: currentDate,
-      };
+      }
 
       return [
         // Additional attribute
         additionalAttribute,
 
         // Attributes for todos
-        ...this.lists.map(list => ({
+        ...this.lists.map((list) => ({
           dates: list.dates,
           dot: {
             color: list.color,
@@ -62,8 +64,8 @@ export default {
             hideIndicator: this.hideIndicators,
           },
         })),
-      ];
+      ]
     },
   },
-};
+}
 </script>
