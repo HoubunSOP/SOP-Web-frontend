@@ -39,6 +39,7 @@
                   height="134"
                   :src="index.cover"
                   width="96"
+                  placeholder="/img/now_printing.webp"
                 />
               </span>
             </figure>
@@ -59,7 +60,7 @@
           v-else
           class="comic max-w-none mt-0 mx-[5px] mb-[18px] rounded-md list-none transition-all hover:bg-slate-100 hover:scale-[1.02] ease-in-out"
           style="width: calc(100% / 4 - 10px)"
-          v-for="index in 12"
+          v-for="index in 10"
           :key="index"
         >
           <div>
@@ -120,7 +121,7 @@ export default {
     const route = useRoute()
 
     const fetchComics = async () => {
-      let url = `/comic/list?limit=12&page=${currentPage.value}`
+      let url = `/comic/list?limit=10&page=${currentPage.value}`
       if (route.query.c != null) {
         url += `&category_id=${route.query.c}`
       }
