@@ -10,7 +10,7 @@ export default defineNuxtConfig({
 
     defaultLocale: 'zh', // not needed if you have @nuxtjs/i18n installed
 
-    }
+    },
   devtools: { enabled: true },
   modules: [
     'nuxt-typed-router',
