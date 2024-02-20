@@ -1,5 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    site: {
+
+    url: 'https://www.fwgxt.top',
+
+    name: '芳文观星台',
+
+    description: '专注于芳文相关内容!',
+
+    defaultLocale: 'zh', // not needed if you have @nuxtjs/i18n installed
+
+    },
   devtools: { enabled: true },
   modules: [
     'nuxt-typed-router',
