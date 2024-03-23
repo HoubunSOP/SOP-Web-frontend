@@ -188,6 +188,10 @@ export default {
           name: '漫画分类',
           path: '/category/comic',
         },
+        {
+          name: '特典',
+          path: '/list/post?c=6',
+        },
       ],
     }
   },
