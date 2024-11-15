@@ -6,9 +6,11 @@
 
 # 🔭 芳文观星台官网前端 🌟
 
-网址：正式(暂未上线) [测试](https://sop.sakurakoi.top)
+网址：[正式](https://www.fwgxt.top)
 
 [后端仓库](https://github.com/HoubunSOP/SOP-Web-backend)
+
+当前正在进行remake（Next仓库处于private），此仓库将不再维护，还请注意
 
 </div>
 
