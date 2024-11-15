@@ -9,6 +9,7 @@
 网址：[正式](https://www.fwgxt.top)
 
 [后端仓库](https://github.com/HoubunSOP/SOP-Web-backend)
+[后台前端仓库](https://github.com/HoubunSOP/SOP-Web-frontend-Admin)
 
 当前正在进行remake（Next仓库处于private），此仓库将不再维护，还请注意
 
